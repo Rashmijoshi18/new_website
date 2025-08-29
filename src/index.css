@@ -1,0 +1,41 @@
+@import "tailwindcss";
+/* Responsive adjustments */
+/* @media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sidebar-open .sidebar {
+    transform: translateX(0);
+  }
+  
+  main {
+    margin-left: 0 !important;
+  }
+} */
+/* Footer specific styles */
+/* footer a {
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: rgb(59 130 246);
+}
+
+.dark footer a:hover {
+  color: rgb(96 165 250);
+} */
+
+/* Ensure proper spacing on mobile */
+/* @media (max-width: 768px) {
+  footer {
+    margin-left: 0 !important;
+    padding: 2rem 1rem;
+  }
+  
+  .grid-cols-1.md\:grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+} */
