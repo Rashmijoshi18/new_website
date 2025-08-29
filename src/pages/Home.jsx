@@ -128,12 +128,14 @@ export default function Home() {
         <div className="bg-[#0d1117] font-mono text-xs sm:text-sm md:text-base p-4 rounded-lg relative border border-gray-700 text-[#238636] overflow-x-auto">
           <button
             onClick={() => navigator.clipboard.writeText(sampleCode)}
-            className="absolute top-2 right-2 px-2 py-1 text-xs text-white rounded hover:opacity-90"
+            className="absolute top-2 right-2 px-2 py-1 text-xs sm:text-sm text-white rounded hover:opacity-90"
             style={{ backgroundColor: "#238636" }}
           >
             Copy
           </button>
-          <pre className="whitespace-pre-wrap sm:whitespace-pre">{sampleCode}</pre>
+          <pre className="whitespace-pre-wrap sm:whitespace-pre">
+            {sampleCode}
+          </pre>
         </div>
       </section>
     </div>
@@ -144,7 +146,10 @@ export default function Home() {
 function StatBox({ number, label }) {
   return (
     <div className="flex flex-col items-center justify-center bg-[#161b22] rounded-lg p-4 sm:p-6 border border-gray-700">
-      <p className="text-2xl sm:text-3xl lg:text-4xl font-bold" style={{ color: "#238636" }}>
+      <p
+        className="text-2xl sm:text-3xl lg:text-4xl font-bold"
+        style={{ color: "#238636" }}
+      >
         {number}
       </p>
       <p className="mt-2 text-xs sm:text-sm lg:text-base text-gray-300 text-center">
