@@ -1,86 +1,47 @@
-// import React, { useState } from "react";
-// import NavItem from "./NavItem";
-// import ThemeToggle from "./ThemeToggle";
-// import { Home, User, Code, Briefcase, Mail } from "lucide-react";
-// import { Link } from "react-router-dom";
-
-// export default function Sidebar() {
-//   const [open, setOpen] = useState(true);
-
-//   return (
-//     <aside
-//       className={`h-screen sticky top-0 left-0 z-20 flex flex-col
-//         bg-[#0d1117] border-r border-gray-800
-//         ${open ? "w-64" : "w-20"} transition-all duration-300`}
-//     >
-//       {/* Profile */}
-//       <div className="flex items-center gap-3 p-4">
-//         <Link to="/" className="flex items-center gap-3">
-//           <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center text-lg font-semibold">
-//             R
-//           </div>
-//           {open && (
-//             <div>
-//               <div className="text-sm font-semibold text-white">Rashmi Joshi</div>
-//               <div className="text-xs text-gray-400">Software Engineer</div>
-//             </div>
-//           )}
-//         </Link>
-//       </div>
-
-//       {/* Nav */}
-//       <nav className="flex-1 px-2 py-4 space-y-1">
-//         <NavItem to="/" icon={<Home className="w-5 h-5" />} label="Home" />
-//         <NavItem to="/about" icon={<User className="w-5 h-5" />} label="About" />
-//         <NavItem to="/projects" icon={<Code className="w-5 h-5" />} label="Projects" />
-//         <NavItem to="/experience" icon={<Briefcase className="w-5 h-5" />} label="Experience" />
-//         <NavItem to="/contact" icon={<Mail className="w-5 h-5" />} label="Contact" />
-//       </nav>
-
-//       {/* Bottom Utilities */}
-//       <div className="p-4 mt-auto border-t border-gray-800">
-//         <div className="flex items-center justify-between">
-//           <ThemeToggle />
-//           <button
-//             onClick={() => setOpen((s) => !s)}
-//             className="p-2 rounded-md hover:bg-[#161b22] transition"
-//             title="Toggle sidebar"
-//           >
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               className="w-5 h-5 text-gray-400"
-//               fill="none"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//             >
-//               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-//             </svg>
-//           </button>
-//         </div>
-//         {open && (
-//           <p className="mt-4 text-xs text-gray-500">© {new Date().getFullYear()} Rashmi</p>
-//         )}
-//       </div>
-//     </aside>
-//   );
-// }
-
 import React, { useState } from "react";
-import NavItem from "./NavItem";
-import ThemeToggle from "./ThemeToggle";
-import { Home, User, Code, Briefcase, Mail, Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import {
+  Home,
+  User,
+  Code,
+  Briefcase,
+  Mail,
+  Github,
+  Linkedin,
+  Twitter,
+  Moon,
+  Sun,
+  Menu,
+  X,
+} from "lucide-react";
 
 export default function Sidebar() {
-  const [open, setOpen] = useState(false); // for mobile drawer
-  const [expanded, setExpanded] = useState(true); // for desktop expand/collapse
+  const [open, setOpen] = useState(false); // mobile drawer
+  const [expanded, setExpanded] = useState(true); // desktop expand/collapse
+  const [darkMode, setDarkMode] = useState(true);
+
+  const toggleTheme = () => setDarkMode((prev) => !prev);
+
+  const navItems = [
+    { to: "/", label: "Overview", icon: <Home className="w-5 h-5" /> },
+    { to: "/about", label: "About", icon: <User className="w-5 h-5" /> },
+    { to: "/projects", label: "Projects", icon: <Code className="w-5 h-5" /> },
+    { to: "/skills", label: "Skills", icon: <Briefcase className="w-5 h-5" /> },
+    { to: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
+  ];
+
+  const socialItems = [
+    { href: "#", icon: <Github className="w-4 h-4" /> },
+    { href: "#", icon: <Linkedin className="w-4 h-4" /> },
+    { href: "#", icon: <Twitter className="w-4 h-4" /> },
+  ];
 
   return (
     <>
-      {/* 🔹 Top Navbar (Mobile only) */}
+      {/* Mobile Top Navbar */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-30 flex items-center justify-between bg-[#0d1117] border-b border-gray-800 px-4 py-3">
         <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center text-sm font-semibold">
+          <div className="w-8 h-8 rounded-full bg-[#238636] text-white flex items-center justify-center text-sm font-semibold">
             R
           </div>
           <span className="text-sm font-semibold text-white">Rashmi</span>
@@ -89,19 +50,23 @@ export default function Sidebar() {
           onClick={() => setOpen(!open)}
           className="p-2 rounded-md hover:bg-[#161b22] transition"
         >
-          {open ? <X className="w-6 h-6 text-gray-300" /> : <Menu className="w-6 h-6 text-gray-300" />}
+          {open ? (
+            <X className="w-6 h-6 text-gray-300" />
+          ) : (
+            <Menu className="w-6 h-6 text-gray-300" />
+          )}
         </button>
       </div>
 
-      {/* 🔹 Mobile Drawer */}
+      {/* Mobile Drawer */}
       <div
-        className={`lg:hidden fixed top-0 left-0 h-full w-64 bg-[#0d1117] border-r border-gray-800 z-40 transform transition-transform duration-300 ${
+        className={`lg:hidden fixed top-0 left-0 h-full w-64 bg-[#0d1117] border-r border-gray-800 z-40 transform transition-transform duration-300 flex flex-col ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Profile */}
         <div className="flex items-center gap-3 p-4 border-b border-gray-800">
-          <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center text-lg font-semibold">
+          <div className="w-10 h-10 rounded-full bg-[#238636] text-white flex items-center justify-center text-lg font-semibold">
             R
           </div>
           <div>
@@ -110,67 +75,124 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* Nav */}
-        <nav className="flex-1 px-2 py-4 space-y-1">
-          <NavItem to="/" icon={<Home className="w-5 h-5" />} label="Home" />
-          <NavItem to="/about" icon={<User className="w-5 h-5" />} label="About" />
-          <NavItem to="/projects" icon={<Code className="w-5 h-5" />} label="Projects" />
-          <NavItem to="/experience" icon={<Briefcase className="w-5 h-5" />} label="Experience" />
-          <NavItem to="/contact" icon={<Mail className="w-5 h-5" />} label="Contact" />
+        {/* Navigation */}
+        <nav className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive
+                    ? "bg-[#238636]/20 text-[#238636]"
+                    : "text-gray-300 hover:bg-[#161b22]"
+                }`
+              }
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </NavLink>
+          ))}
         </nav>
 
-        {/* Footer */}
-        <div className="p-4 border-t border-gray-800">
-          <ThemeToggle />
-          <p className="mt-4 text-xs text-gray-500">© {new Date().getFullYear()} Rashmi</p>
+        {/* Footer (Mobile stacked layout) */}
+        <div className="p-4 mt-auto border-t border-gray-800 flex flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full hover:bg-[#161b22] transition"
+            >
+              {darkMode ? (
+                <Moon className="w-4 h-4 text-[#238636]" />
+              ) : (
+                <Sun className="w-4 h-4 text-[#238636]" />
+              )}
+            </button>
+            <button
+              onClick={() => setOpen(false)}
+              className="px-3 py-1 text-xs rounded-md bg-[#238636] text-white hover:opacity-90 transition"
+            >
+              Close
+            </button>
+          </div>
+          <div className="flex gap-2 mt-2 justify-center">
+            {socialItems.map((social, i) => (
+              <a
+                key={i}
+                href={social.href}
+                className="p-2 rounded-full hover:bg-[#161b22] transition text-gray-300"
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+          <p className="text-sm text-gray-400">
+            © {new Date().getFullYear()} Rashmi Joshi. All rights reserved.
+          </p>
         </div>
       </div>
 
-      {/* 🔹 Desktop Sidebar */}
+      {/* Desktop Sidebar */}
       <aside
-        className={`hidden lg:flex flex-col h-screen sticky top-0 left-0 z-20
-          bg-[#0d1117] border-r border-gray-800
-          transition-all duration-300 ${expanded ? "w-64" : "w-20"}`}
+        className={`hidden lg:flex flex-col h-screen sticky top-0 left-0 z-20 bg-[#0d1117] border-r border-gray-800 transition-all duration-300 ${
+          expanded ? "w-64" : "w-20"
+        }`}
       >
         {/* Profile */}
-        <div className="flex items-center gap-3 p-4">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-green-600 text-white flex items-center justify-center text-lg font-semibold">
+        <div className="flex flex-col gap-2 p-4 border-b border-gray-800">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-[#238636] text-white flex items-center justify-center text-lg font-semibold">
               R
             </div>
-            {expanded && (
-              <div>
-                <div className="text-sm font-semibold text-white">Rashmi Joshi</div>
-                <div className="text-xs text-gray-400">Software Engineer</div>
+            <div>
+              <div className="text-sm font-semibold text-white">
+                Rashmi Joshi
               </div>
-            )}
-          </Link>
+              <div className="text-xs text-gray-400">Software Engineer</div>
+            </div>
+          </div>
+          <div className="mt-3 border-t border-gray-700"></div>
         </div>
 
-        {/* Nav */}
-        <nav className="flex-1 px-2 py-4 space-y-1">
-          <NavItem to="/" icon={<Home className="w-5 h-5" />} label="Home" />
-          <NavItem to="/about" icon={<User className="w-5 h-5" />} label="About" />
-          <NavItem to="/projects" icon={<Code className="w-5 h-5" />} label="Projects" />
-          <NavItem to="/experience" icon={<Briefcase className="w-5 h-5" />} label="Experience" />
-          <NavItem to="/contact" icon={<Mail className="w-5 h-5" />} label="Contact" />
+        {/* Navigation */}
+        <nav className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive
+                    ? "bg-[#238636]/20 text-[#238636]"
+                    : "text-gray-300 hover:bg-[#161b22]"
+                }`
+              }
+            >
+              {item.icon}
+              {expanded && <span>{item.label}</span>}
+            </NavLink>
+          ))}
         </nav>
 
-        {/* Footer */}
-        <div className="p-4 mt-auto border-t border-gray-800">
-          <div className="flex items-center justify-between">
-            <ThemeToggle />
-            <button
-              onClick={() => setExpanded((s) => !s)}
-              className="p-2 rounded-md hover:bg-[#161b22] transition"
-              title="Toggle sidebar"
-            >
-              <Menu className="w-5 h-5 text-gray-400" />
-            </button>
+        {/* Footer (Desktop aligned like main footer) */}
+        <div className="border-t border-gray-800 py-4 px-6 flex flex-row items-start justify-between">
+          {/* Social icons */}
+          <div className="flex gap-4">
+            {socialItems.map((social, i) => (
+              <a
+                key={i}
+                href={social.href}
+                className="p-2 rounded-full hover:bg-[#161b22] transition text-gray-300"
+              >
+                {social.icon}
+              </a>
+            ))}
           </div>
-          {expanded && (
-            <p className="mt-4 text-xs text-gray-500">© {new Date().getFullYear()} Rashmi</p>
-          )}
+
+          {/* Copyright */}
+          {/* <p className="text-sm text-gray-400 whitespace-nowrap">
+            © {new Date().getFullYear()} Rashmi Joshi. All rights reserved.
+          </p> */}
         </div>
       </aside>
     </>
