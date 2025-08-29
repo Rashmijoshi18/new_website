@@ -126,9 +126,9 @@ export default function Sidebar() {
               </a>
             ))}
           </div>
-          <p className="text-sm text-gray-400">
+          {/* <p className="text-sm text-gray-400">
             © {new Date().getFullYear()} Rashmi Joshi. All rights reserved.
-          </p>
+          </p> */}
         </div>
       </div>
 
