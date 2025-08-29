@@ -44,7 +44,7 @@ export default function Sidebar() {
           <div className="w-8 h-8 rounded-full bg-[#238636] text-white flex items-center justify-center text-sm font-semibold">
             R
           </div>
-          <span className="text-sm font-semibold text-white">Rashmi</span>
+          <span className="text-sm font-semibold text-white">Rashmi Joshi</span>
         </Link>
         <button
           onClick={() => setOpen(!open)}
