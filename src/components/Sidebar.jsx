@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -9,8 +8,8 @@ import {
   Mail,
   Menu,
   X,
-  ChevronLeft, // Added ChevronLeft icon
-  ChevronRight // Added ChevronRight icon
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -28,14 +27,14 @@ export default function Sidebar() {
   return (
     <>
       {/* Mobile Top Navbar */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white border-b-2 border-[#0F9D58] px-4 py-3 shadow-md">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white border-b-2 border-[#308D46] px-4 py-3 shadow-md">
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded bg-[#0F9D58] text-white flex items-center justify-center text-lg font-bold shadow-sm">
+          <div className="w-10 h-10 rounded bg-[#308D46] text-white flex items-center justify-center text-lg font-bold shadow-sm">
             R
           </div>
           <div className="flex flex-col">
             <span className="text-lg font-bold text-gray-800 leading-tight">Rashmi Joshi</span>
-            <span className="text-xs text-[#0F9D58] font-semibold">Portfolio</span>
+            <span className="text-xs text-[#308D46] font-semibold">Portfolio</span>
           </div>
         </Link>
         <button
@@ -65,7 +64,7 @@ export default function Sidebar() {
         }`}
       >
         {/* Profile Header */}
-        <div className="bg-gradient-to-r from-[#0F9D58] to-[#0B7A43] p-6 text-white">
+        <div className="bg-gradient-to-r from-[#308D46] to-[#0B7A43] p-6 text-white">
           <div className="flex items-center gap-4">
             <div className="w-14 h-14 rounded bg-white bg-opacity-20 backdrop-blur-sm text-white flex items-center justify-center text-xl font-bold border-2 border-white border-opacity-30">
               G
@@ -91,8 +90,8 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `flex items-center gap-4 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-[#0F9D58] text-white shadow-md transform scale-[1.02]"
-                    : "text-gray-700 hover:bg-gray-50 hover:text-[#0F9D58] hover:translate-x-1"
+                    ? "bg-[#308D46] text-white shadow-md transform scale-[1.02]"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-[#308D46] hover:translate-x-1"
                 }`
               }
             >
@@ -112,12 +111,12 @@ export default function Sidebar() {
 
       {/* Desktop Sidebar */}
       <aside
-        className={`hidden lg:flex flex-col h-screen sticky top-0 bg-white border-r-2 border-[#0F9D58] transition-all duration-300 shadow-lg ${
+        className={`hidden lg:flex flex-col h-screen sticky top-0 bg-white border-r-2 border-[#308D46] transition-all duration-300 shadow-lg ${
           expanded ? "w-72" : "w-20"
         }`}
       >
         {/* Header */}
-        <div className="bg-gradient-to-br from-[#0F9D58] to-[#0B7A43] p-6 text-white relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#20572d] to-[#0e2613] p-6 text-white relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-20 h-20 rounded-full bg-white transform translate-x-8 -translate-y-8"></div>
@@ -147,7 +146,7 @@ export default function Sidebar() {
         {/* Toggle Button */}
         <button
           onClick={() => setExpanded(!expanded)}
-          className="absolute top-24 -right-3 w-6 h-6 bg-[#0F9D58] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#0B7A43] transition-colors z-10"
+          className="absolute top-24 -right-3 w-6 h-6 bg-[#308D46] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#0B7A43] transition-colors z-10"
         >
           {expanded ? (
             <ChevronLeft className="w-4 h-4" />
@@ -168,8 +167,8 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `flex items-center gap-4 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 group relative ${
                   isActive
-                    ? "bg-[#0F9D58] text-white shadow-md"
-                    : "text-gray-700 hover:bg-green-50 hover:text-[#0F9D58]"
+                    ? "bg-[#308D46] text-white shadow-md"
+                    : "text-gray-700 hover:bg-green-50 hover:text-[#308D46]"
                 } ${!expanded ? 'justify-center' : ''}`
               }
             >
@@ -190,18 +189,18 @@ export default function Sidebar() {
         <div className={`p-4 border-t border-gray-200 bg-gradient-to-r from-gray-50 to-green-50 ${!expanded ? 'text-center' : ''}`}>
           {expanded ? (
             <div>
-              <div className="text-xs font-semibold text-[#0F9D58] mb-2">Portfolio</div>
+              <div className="text-xs font-semibold text-[#308D46] mb-2">Portfolio</div>
               <div className="text-xs text-gray-600 leading-relaxed">
                 Practice • Learn • Improve
               </div>
               <div className="flex items-center gap-2 mt-3">
-                <div className="w-2 h-2 bg-[#0F9D58] rounded-full animate-pulse"></div>
+                <div className="w-2 h-2 bg-[#308D46] rounded-full animate-pulse"></div>
                 <div className="text-xs text-gray-500">Ready to code</div>
               </div>
             </div>
           ) : (
-            <div className="w-8 h-8 rounded bg-[#0F9D58] bg-opacity-10 flex items-center justify-center">
-              <div className="w-2 h-2 bg-[#0F9D58] rounded-full animate-pulse"></div>
+            <div className="w-8 h-8 rounded bg-[#308D46] bg-opacity-10 flex items-center justify-center">
+              <div className="w-2 h-2 bg-[#308D46] rounded-full animate-pulse"></div>
             </div>
           )}
         </div>
