@@ -1,32 +1,39 @@
-// src/components/ThemeToggle.jsx
-/**
- * ThemeToggle.jsx
- * - toggles dark/light theme using theme utils
- */
-import React, { useState, useEffect } from 'react'
-import { getSavedTheme, toggleTheme } from '../utils/theme'
-import { Sun, Moon } from 'lucide-react' // if lucide-react installed
+
+import React, { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState(getSavedTheme())
+  const [dark, setDark] = useState(false); // default = light mode
 
   useEffect(() => {
-    setTheme(getSavedTheme())
-  }, [])
+    // Check localStorage first
+    const saved = localStorage.getItem("theme");
+    if (saved) {
+      setDark(saved === "dark");
+    }
+  }, []);
 
-  function handleToggle() {
-    const next = toggleTheme()
-    setTheme(next)
-  }
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [dark]);
 
   return (
     <button
-      onClick={handleToggle}
-      aria-label="Toggle theme"
-      className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800 transition"
-      title="Toggle theme"
+      onClick={() => setDark(!dark)}
+      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+      aria-label="Toggle Dark Mode"
     >
-      {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+      {dark ? (
+        <Sun className="w-5 h-5 text-yellow-400" />
+      ) : (
+        <Moon className="w-5 h-5 text-gray-700" />
+      )}
     </button>
-  )
+  );
 }
