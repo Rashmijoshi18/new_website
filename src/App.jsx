@@ -1,7 +1,8 @@
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
-import Footer from "./components/Footer"; // ✅ fixed
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -11,22 +12,27 @@ import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#0d1117] text-slate-200 transition-colors flex">
+    <div className="min-h-screen bg-white text-gray-800 transition-colors flex flex-col lg:flex-row">
       {/* Left Sidebar */}
       <Sidebar />
 
-      {/* Main content */}
-      <main className="flex-1 pl-2 pr-6 md:pr-10 pt-4 pb-8">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+      {/* Main content wrapper */}
+      <div className="flex-1 flex flex-col">
+        {/* Main content */}
+        <main className="flex-1 px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        
+        {/* Footer */}
         <Footer />
-      </main>
+      </div>
     </div>
-  )
+  );
 }

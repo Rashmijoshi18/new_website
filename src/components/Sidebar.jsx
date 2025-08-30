@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import {
@@ -6,21 +7,13 @@ import {
   Code,
   Briefcase,
   Mail,
-  Github,
-  Linkedin,
-  Twitter,
-  Moon,
-  Sun,
   Menu,
   X,
 } from "lucide-react";
 
 export default function Sidebar() {
-  const [open, setOpen] = useState(false); // mobile drawer
-  const [expanded, setExpanded] = useState(true); // desktop expand/collapse
-  const [darkMode, setDarkMode] = useState(true);
-
-  const toggleTheme = () => setDarkMode((prev) => !prev);
+  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(true);
 
   const navItems = [
     { to: "/", label: "Overview", icon: <Home className="w-5 h-5" /> },
@@ -30,169 +23,183 @@ export default function Sidebar() {
     { to: "/contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
   ];
 
-  const socialItems = [
-    { href: "#", icon: <Github className="w-4 h-4" /> },
-    { href: "#", icon: <Linkedin className="w-4 h-4" /> },
-    { href: "#", icon: <Twitter className="w-4 h-4" /> },
-  ];
-
   return (
     <>
       {/* Mobile Top Navbar */}
-      <div className="lg:hidden fixed top-0 left-0 right-0 z-30 flex items-center justify-between bg-[#0d1117] border-b border-gray-800 px-4 py-3">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-[#238636] text-white flex items-center justify-center text-sm font-semibold">
+      <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white border-b-2 border-[#0F9D58] px-4 py-3 shadow-md">
+        <Link to="/" className="flex items-center gap-3">
+          <div className="w-10 h-10 rounded bg-[#0F9D58] text-white flex items-center justify-center text-lg font-bold shadow-sm">
             R
           </div>
-          <span className="text-sm font-semibold text-white">Rashmi Joshi</span>
+          <div className="flex flex-col">
+            <span className="text-lg font-bold text-gray-800 leading-tight">Rashmi Joshi</span>
+            <span className="text-xs text-[#0F9D58] font-semibold">Portfolio</span>
+          </div>
         </Link>
         <button
           onClick={() => setOpen(!open)}
-          className="p-2 rounded-md hover:bg-[#161b22] transition"
+          className="p-2 rounded hover:bg-gray-100 transition-colors"
         >
           {open ? (
-            <X className="w-6 h-6 text-gray-300" />
+            <X className="w-6 h-6 text-gray-700" />
           ) : (
-            <Menu className="w-6 h-6 text-gray-300" />
+            <Menu className="w-6 h-6 text-gray-700" />
           )}
         </button>
       </div>
 
+      {/* Mobile Drawer Backdrop */}
+      {open && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-60 z-40"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
       {/* Mobile Drawer */}
       <div
-        className={`lg:hidden fixed top-0 left-0 h-full w-64 bg-[#0d1117] border-r border-gray-800 z-40 transform transition-transform duration-300 flex flex-col ${
+        className={`lg:hidden fixed top-0 left-0 h-full w-72 bg-white z-50 transform transition-transform duration-300 flex flex-col shadow-2xl ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Profile */}
-        <div className="flex items-center gap-3 p-4 border-b border-gray-800">
-          <div className="w-10 h-10 rounded-full bg-[#238636] text-white flex items-center justify-center text-lg font-semibold">
-            R
-          </div>
-          <div>
-            <div className="text-sm font-semibold text-white">Rashmi Joshi</div>
-            <div className="text-xs text-gray-400">Software Engineer</div>
+        {/* Profile Header */}
+        <div className="bg-gradient-to-r from-[#0F9D58] to-[#0B7A43] p-6 text-white">
+          <div className="flex items-center gap-4">
+            <div className="w-14 h-14 rounded bg-white bg-opacity-20 backdrop-blur-sm text-white flex items-center justify-center text-xl font-bold border-2 border-white border-opacity-30">
+              G
+            </div>
+            <div>
+              <div className="text-lg font-bold">Rashmi Joshi</div>
+              <div className="text-sm opacity-90">Web Developer</div>
+              <div className="text-xs opacity-75 mt-1">Coding • Learning • Growing</div>
+            </div>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
+        <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
+          <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 px-2">
+            Navigation
+          </div>
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
+              onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                `flex items-center gap-4 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-[#238636]/20 text-[#238636]"
-                    : "text-gray-300 hover:bg-[#161b22]"
+                    ? "bg-[#0F9D58] text-white shadow-md transform scale-[1.02]"
+                    : "text-gray-700 hover:bg-gray-50 hover:text-[#0F9D58] hover:translate-x-1"
                 }`
               }
             >
-              {item.icon}
-              <span>{item.label}</span>
+              <div className="flex-shrink-0">{item.icon}</div>
+              <span className="font-medium">{item.label}</span>
             </NavLink>
           ))}
         </nav>
 
-        {/* Footer (Mobile stacked layout) */}
-        <div className="p-4 mt-auto border-t border-gray-800 flex flex-col gap-2">
-          <div className="flex items-center justify-between">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-[#161b22] transition"
-            >
-              {darkMode ? (
-                <Moon className="w-4 h-4 text-[#238636]" />
-              ) : (
-                <Sun className="w-4 h-4 text-[#238636]" />
-              )}
-            </button>
-            <button
-              onClick={() => setOpen(false)}
-              className="px-3 py-1 text-xs rounded-md bg-[#238636] text-white hover:opacity-90 transition"
-            >
-              Close
-            </button>
+        {/* Footer */}
+        <div className="p-4 border-t border-gray-200 bg-gray-50">
+          <div className="text-xs text-gray-500 text-center">
+            Made with ❤️ by Rashmi Joshi
           </div>
-          <div className="flex gap-2 mt-2 justify-center">
-            {socialItems.map((social, i) => (
-              <a
-                key={i}
-                href={social.href}
-                className="p-2 rounded-full hover:bg-[#161b22] transition text-gray-300"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-          {/* <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Rashmi Joshi. All rights reserved.
-          </p> */}
         </div>
       </div>
 
       {/* Desktop Sidebar */}
       <aside
-        className={`hidden lg:flex flex-col h-screen sticky top-0 left-0 z-20 bg-[#0d1117] border-r border-gray-800 transition-all duration-300 ${
-          expanded ? "w-64" : "w-20"
+        className={`hidden lg:flex flex-col h-screen sticky top-0 bg-white border-r-2 border-[#0F9D58] transition-all duration-300 shadow-lg ${
+          expanded ? "w-72" : "w-20"
         }`}
       >
-        {/* Profile */}
-        <div className="flex flex-col gap-2 p-4 border-b border-gray-800">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-[#238636] text-white flex items-center justify-center text-lg font-semibold">
-              R
-            </div>
-            <div>
-              <div className="text-sm font-semibold text-white">
-                Rashmi Joshi
-              </div>
-              <div className="text-xs text-gray-400">Software Engineer</div>
-            </div>
+        {/* Header */}
+        <div className="bg-gradient-to-br from-[#0F9D58] to-[#0B7A43] p-6 text-white relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 right-0 w-20 h-20 rounded-full bg-white transform translate-x-8 -translate-y-8"></div>
+            <div className="absolute bottom-0 left-0 w-16 h-16 rounded-full bg-white transform -translate-x-6 translate-y-6"></div>
           </div>
-          <div className="mt-3 border-t border-gray-700"></div>
+          
+          <div className="relative z-10">
+            <div className="flex items-center gap-4 mb-3">
+              <div className="w-12 h-12 rounded bg-white bg-opacity-20 backdrop-blur-sm text-white flex items-center justify-center text-xl font-bold border-2 border-white border-opacity-30 shadow-lg">
+                R
+              </div>
+              {expanded && (
+                <div>
+                  <div className="text-xl font-bold">Rashmi Joshi</div>
+                  <div className="text-sm opacity-90">Portfolio</div>
+                </div>
+              )}
+            </div>
+            {expanded && (
+              <div className="text-xs opacity-80 bg-white bg-opacity-10 rounded px-2 py-1 inline-block">
+                A Computer Science Portal
+              </div>
+            )}
+          </div>
         </div>
 
+        {/* Toggle Button */}
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="absolute top-24 -right-3 w-6 h-6 bg-[#0F9D58] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#0B7A43] transition-colors z-10"
+        >
+          <div className={`transform transition-transform ${expanded ? 'rotate-180' : ''}`}>
+            ←
+          </div>
+        </button>
+
         {/* Navigation */}
-        <nav className="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
+        <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
+          <div className={`text-xs font-bold text-gray-500 uppercase tracking-wider mb-4 ${expanded ? 'px-3' : 'text-center'}`}>
+            {expanded ? 'Menu' : '•••'}
+          </div>
           {navItems.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                `flex items-center gap-4 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 group relative ${
                   isActive
-                    ? "bg-[#238636]/20 text-[#238636]"
-                    : "text-gray-300 hover:bg-[#161b22]"
-                }`
+                    ? "bg-[#0F9D58] text-white shadow-md"
+                    : "text-gray-700 hover:bg-green-50 hover:text-[#0F9D58]"
+                } ${!expanded ? 'justify-center' : ''}`
               }
             >
-              {item.icon}
-              {expanded && <span>{item.label}</span>}
+              <div className="flex-shrink-0 group-hover:scale-110 transition-transform">
+                {item.icon}
+              </div>
+              {expanded && <span className="font-semibold">{item.label}</span>}
+              {!expanded && (
+                <div className="absolute left-full ml-2 px-2 py-1 bg-gray-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20">
+                  {item.label}
+                </div>
+              )}
             </NavLink>
           ))}
         </nav>
 
-        {/* Footer (Desktop aligned like main footer) */}
-        <div className="border-t border-gray-800 py-4 px-6 flex flex-row items-start justify-between">
-          {/* Social icons */}
-          <div className="flex gap-4">
-            {socialItems.map((social, i) => (
-              <a
-                key={i}
-                href={social.href}
-                className="p-2 rounded-full hover:bg-[#161b22] transition text-gray-300"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-
-          {/* Copyright */}
-          {/* <p className="text-sm text-gray-400 whitespace-nowrap">
-            © {new Date().getFullYear()} Rashmi Joshi. All rights reserved.
-          </p> */}
+        {/* Footer */}
+        <div className={`p-4 border-t border-gray-200 bg-gradient-to-r from-gray-50 to-green-50 ${!expanded ? 'text-center' : ''}`}>
+          {expanded ? (
+            <div>
+              <div className="text-xs font-semibold text-[#0F9D58] mb-2">Portfolio</div>
+              <div className="text-xs text-gray-600 leading-relaxed">
+                Practice • Learn • Improve
+              </div>
+              <div className="flex items-center gap-2 mt-3">
+                <div className="w-2 h-2 bg-[#0F9D58] rounded-full animate-pulse"></div>
+                <div className="text-xs text-gray-500">Ready to code</div>
+              </div>
+            </div>
+          ) : (
+            <div className="w-8 h-8 rounded bg-[#0F9D58] bg-opacity-10 flex items-center justify-center">
+              <div className="w-2 h-2 bg-[#0F9D58] rounded-full animate-pulse"></div>
+            </div>
+          )}
         </div>
       </aside>
     </>
