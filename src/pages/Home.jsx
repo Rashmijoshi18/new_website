@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="flex flex-col gap-8 px-4 py-3 sm:px-6 md:px-10 lg:px-16 bg-white text-gray-800 mt-8 lg:mt-2 overflow-y-auto">
       
@@ -14,13 +17,15 @@ export default function Home() {
         </p>
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start items-center mt-6">
-          <button 
+          <button
+            onClick={() => navigate("/projects")}
             className="px-6 py-2 text-sm text-white rounded hover:opacity-90"
             style={{ backgroundColor: "#308D46" }}
           >
             View My Work
           </button>
-          <button 
+          <button
+            onClick={() => navigate("/contact")}
             className="px-6 py-2 text-sm border border-[#308D46] text-[#308D46] rounded hover:bg-[#308D46] hover:text-white"
           >
             Contact Me
@@ -76,19 +81,31 @@ export default function Home() {
           Explore My Portfolio
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
-          <div className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow">
+          <div
+            onClick={() => navigate("/about")}
+            className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
+          >
             <h3 className="font-semibold text-[#308D46] text-sm mb-1">About</h3>
             <p className="text-xs text-gray-700">Learn more about me</p>
           </div>
-          <div className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow">
+          <div
+            onClick={() => navigate("/skills")}
+            className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
+          >
             <h3 className="font-semibold text-[#308D46] text-sm mb-1">Skills</h3>
             <p className="text-xs text-gray-700">Technical expertise</p>
           </div>
-          <div className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow">
+          <div
+            onClick={() => navigate("/services")}
+            className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
+          >
             <h3 className="font-semibold text-[#308D46] text-sm mb-1">Services</h3>
             <p className="text-xs text-gray-700">What I can do for you</p>
           </div>
-          <div className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow">
+          <div
+            onClick={() => navigate("/contact")}
+            className="bg-white border border-gray-300 rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
+          >
             <h3 className="font-semibold text-[#308D46] text-sm mb-1">Contact</h3>
             <p className="text-xs text-gray-700">Get in touch</p>
           </div>

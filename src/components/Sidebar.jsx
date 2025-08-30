@@ -9,6 +9,8 @@ import {
   Mail,
   Menu,
   X,
+  ChevronLeft, // Added ChevronLeft icon
+  ChevronRight // Added ChevronRight icon
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -147,9 +149,11 @@ export default function Sidebar() {
           onClick={() => setExpanded(!expanded)}
           className="absolute top-24 -right-3 w-6 h-6 bg-[#0F9D58] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#0B7A43] transition-colors z-10"
         >
-          <div className={`transform transition-transform ${expanded ? 'rotate-180' : ''}`}>
-            ←
-          </div>
+          {expanded ? (
+            <ChevronLeft className="w-4 h-4" />
+          ) : (
+            <ChevronRight className="w-4 h-4" />
+          )}
         </button>
 
         {/* Navigation */}
