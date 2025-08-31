@@ -293,7 +293,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                 <div className="w-10 h-10 bg-green-800 rounded-lg flex items-center justify-center mr-3">
                   <Code className="w-5 h-5 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-green-700">Development Approach</h2>
+                <h2 className="text-2xl font-bold text-grey-900">Development Approach</h2>
               </div>
 
               <p className="text-gray-700 mb-6">
