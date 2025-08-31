@@ -29,7 +29,7 @@ export default function Sidebar() {
       {/* Mobile Top Navbar */}
       <div className="lg:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-white border-b-2 border-[#308D46] px-4 py-3 shadow-md">
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded bg-[#308D46] text-white flex items-center justify-center text-lg font-bold shadow-sm">
+          <div className="w-10 h-10 rounded bg-green-700 text-white flex items-center justify-center text-lg font-bold shadow-sm">
             R
           </div>
           <div className="flex flex-col">
@@ -90,7 +90,7 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `flex items-center gap-4 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                   isActive
-                    ? "bg-[#308D46] text-white shadow-md transform scale-[1.02]"
+                    ? "bg-green-700 text-white shadow-md transform scale-[1.02]"
                     : "text-gray-700 hover:bg-gray-50 hover:text-[#308D46] hover:translate-x-1"
                 }`
               }
@@ -116,7 +116,7 @@ export default function Sidebar() {
         }`}
       >
         {/* Header */}
-        <div className="bg-gradient-to-br from-[#20572d] to-[#0e2613] p-6 text-white relative overflow-hidden">
+        <div className="bg-gradient-to-br from-[#20572d] to-[#36533c] p-6 text-white relative overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-20 h-20 rounded-full bg-white transform translate-x-8 -translate-y-8"></div>
@@ -146,7 +146,7 @@ export default function Sidebar() {
         {/* Toggle Button */}
         <button
           onClick={() => setExpanded(!expanded)}
-          className="absolute top-24 -right-3 w-6 h-6 bg-[#308D46] text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#0B7A43] transition-colors z-10"
+          className="absolute top-24 -right-3 w-6 h-6 bg-green-700 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-[#0B7A43] transition-colors z-10"
         >
           {expanded ? (
             <ChevronLeft className="w-4 h-4" />
@@ -167,7 +167,7 @@ export default function Sidebar() {
               className={({ isActive }) =>
                 `flex items-center gap-4 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 group relative ${
                   isActive
-                    ? "bg-[#308D46] text-white shadow-md"
+                    ? "bg-green-700 text-white shadow-md"
                     : "text-gray-700 hover:bg-green-50 hover:text-[#308D46]"
                 } ${!expanded ? 'justify-center' : ''}`
               }

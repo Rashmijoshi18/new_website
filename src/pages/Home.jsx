@@ -66,7 +66,7 @@ console.log('Welcome to my digital world! 🚀');`;
         <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
           <Link
             to="/projects"
-            className="btn-primary group px-8 py-3 bg-gradient-to-r from-[#308D46] to-[#246534] text-white rounded-xl font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
+            className="btn-primary group px-8 py-3 bg-green-700 text-white rounded-xl font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
           >
             View My Work
             <i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
