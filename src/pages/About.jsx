@@ -64,23 +64,32 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 
   const educationData = [
     {
-      period: "2020-2022",
-      degree: "Master of Computer Science",
-      institution: "Stanford University",
-      location: "Stanford, CA",
-      description: "Specialized in Artificial Intelligence and Machine Learning.",
-      gpa: "3.9/4.0",
-      honors: "Summa Cum Laude"
+      period: "2016-2020",
+      degree: "Bachelor of Technology in Computer Science and Engineering",
+      institution: "Lovely Professional University",
+      location: "Punjab, India",
+      description: "Focus on full-stack development and algorithms.",
+      // gpa: "3.8/4.0",
+      // honors: "Dean's List"
     },
     {
-      period: "2016-2020",
-      degree: "Bachelor of Science in Software Engineering",
-      institution: "MIT",
-      location: "Cambridge, MA",
-      description: "Focus on full-stack development and algorithms.",
-      gpa: "3.8/4.0",
-      honors: "Dean's List"
-    }
+      period: "2020-2022",
+      degree: "Higher Secondary Education",
+      institution: "New Adarsh Senior Secondary School",  
+      location: "Punjab, India",
+      description: "Studied various subjects including Mathematics, Physics, and Computer Science.",
+      // gpa: "3.9/4.0",
+      // honors: "Summa Cum Laude"
+    },
+    // {
+    //   period: "2016-2020",
+    //   degree: "Bachelor of Technology in Computer Science and Engineering",
+    //   institution: "Lovely Professional University",
+    //   location: "Punjab, India",
+    //   description: "Focus on full-stack development and algorithms.",
+    //   // gpa: "3.8/4.0",
+    //   // honors: "Dean's List"
+    // }
   ];
 
   const philosophyPrinciples = [
@@ -100,7 +109,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
     <div className="min-h-screen bg-white py-8 px-4 mb-10">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-10">
           <div className="w-20 h-20 bg-green-700 rounded-full flex items-center justify-center mx-auto mb-4">
             <User className="w-10 h-10 text-white" />
           </div>
@@ -200,9 +209,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                       <h3 className="text-xl font-bold text-grey-900">
                         {edu.degree}
                       </h3>
-                      <span className="text-sm font-medium bg-green-100 text-grey-700 py-1 px-3 rounded-full mt-2 lg:mt-0">
-                        {edu.period}
-                      </span>
+                      
                     </div>
 
                     <div className="flex items-center gap-4 mb-3 text-gray-600">
@@ -221,11 +228,11 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                     <div className="flex gap-2">
                       <div className="bg-green-100 text-grey-700 px-3 py-1 rounded-full text-sm">
                         <Award className="w-3 h-3 inline mr-1" />
-                        GPA: {edu.gpa}
+                        {/* GPA: {edu.gpa} */}
                       </div>
                       <div className="bg-green-100 text-grey-700 px-3 py-1 rounded-full text-sm">
                         <Star className="w-3 h-3 inline mr-1" />
-                        {edu.honors}
+                        {/* {edu.honors} */}
                       </div>
                     </div>
                   </div>
