@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   User,
   GraduationCap,
@@ -17,6 +17,35 @@ import {
 
 export default function About() {
   const [activeTab, setActiveTab] = useState("intro");
+
+  useEffect(() => {
+    const copyButton = document.querySelector(".copy-btn");
+    const copySuccess = document.getElementById("copy-success");
+
+    if (copyButton) {
+      copyButton.addEventListener("click", function () {
+        const code = `const myApproach = {
+  focus: "User Experience",
+  codeStyle: "Clean & Maintainable",
+  testing: "Test-Driven Development",
+  learning: "Continuous Growth"
+};
+
+console.log('Crafting scalable & meaningful solutions 🚀');`;
+
+        navigator.clipboard.writeText(code).then(function () {
+          copySuccess.classList.remove("hidden");
+          copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
+
+          setTimeout(function () {
+            copySuccess.classList.add("hidden");
+            copyButton.innerHTML =
+              '<i class="far fa-copy"></i> Copy';
+          }, 2000);
+        });
+      });
+    }
+  }, [activeTab]);
 
   const tabs = [
     { id: "intro", label: "Introduction", icon: User },
@@ -70,7 +99,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white py-8 px-4 mb-12">
       <div className="max-w-5xl mx-auto">
-        {/* Simple Header */}
+        {/* Header */}
         <div className="text-center mb-10">
           <div className="w-20 h-20 bg-green-800 rounded-full flex items-center justify-center mx-auto mb-4">
             <User className="w-10 h-10 text-white" />
@@ -82,7 +111,7 @@ export default function About() {
           </p>
         </div>
 
-        {/* Simple Tab Navigation */}
+        {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-2 mb-14 bg-white rounded-lg p-2 shadow-sm">
           {tabs.map((tab) => {
             const IconComponent = tab.icon;
@@ -104,11 +133,9 @@ export default function About() {
           })}
         </div>
 
-        {/* Content Area */}
+        {/* Content */}
         <div className="bg-white rounded-lg shadow-md border border-gray-200">
-          {/* <div className="bg-white rounded-lg shadow-md border border-gray-200 mt-4"> */}
-
-          {/* Introduction */}
+          {/* Intro */}
           {activeTab === "intro" && (
             <div className="p-6">
               <div className="flex items-center mb-6 pb-3 border-b border-green-800">
@@ -252,7 +279,7 @@ export default function About() {
             </div>
           )}
 
-          {/* Approach */}
+          {/* Approach (Updated with Documentation style) */}
           {activeTab === "approach" && (
             <div className="p-6">
               <div className="flex items-center mb-6 pb-3 border-b border-green-800">
@@ -262,44 +289,50 @@ export default function About() {
                 <h2 className="text-2xl font-bold text-gray-800">Development Approach</h2>
               </div>
 
-              <div className="space-y-6">
-                <p className="text-gray-700 leading-relaxed">
-                  My development approach focuses on creating scalable,
-                  maintainable solutions through proven methodologies and best
-                  practices.
-                </p>
+              <p className="text-gray-700 mb-6">
+                My development approach focuses on building scalable, maintainable,
+                and meaningful applications with strong user experience at the core.
+              </p>
 
-                <div className="bg-gray-900 rounded-lg p-4">
-                  <div className="font-mono text-sm text-gray-300 space-y-1">
-                    <div>
-                      <span className="text-blue-400">const</span>{" "}
-                      <span className="text-green-400">myApproach</span> = {"{"}
+              {/* Code Block Styled */}
+              <div className="code-block relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
+                {/* Header */}
+                <div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+                      <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full"></div>
+                      <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
                     </div>
-                    <div className="ml-4">
-                      <span className="text-gray-400">focus:</span>{" "}
-                      <span className="text-yellow-300">"User Experience"</span>,
-                    </div>
-                    <div className="ml-4">
-                      <span className="text-gray-400">codeStyle:</span>{" "}
-                      <span className="text-yellow-300">
-                        "Clean & Maintainable"
-                      </span>
-                      ,
-                    </div>
-                    <div className="ml-4">
-                      <span className="text-gray-400">testing:</span>{" "}
-                      <span className="text-yellow-300">
-                        "Test-Driven Development"
-                      </span>
-                      ,
-                    </div>
-                    <div className="ml-4">
-                      <span className="text-gray-400">learning:</span>{" "}
-                      <span className="text-yellow-300">"Continuous Growth"</span>
-                    </div>
-                    <div>{"}"}</div>
+                    <span className="text-gray-400 text-xs font-mono ml-2">
+                      myApproach.js
+                    </span>
                   </div>
+                  <button className="copy-btn flex items-center gap-1 px-2.5 py-1.5 text-xs text-gray-300 hover:text-white bg-gray-700 hover:bg-gray-600 rounded transition-colors">
+                    <i className="far fa-copy"></i> <span>Copy</span>
+                  </button>
                 </div>
+
+                {/* Code Content */}
+                <div className="p-4 overflow-x-auto">
+                  <pre className="text-sm text-gray-300 font-mono leading-relaxed">
+{`const myApproach = {
+  focus: "User Experience",
+  codeStyle: "Clean & Maintainable",
+  testing: "Test-Driven Development",
+  learning: "Continuous Growth"
+};
+
+console.log('Crafting scalable & meaningful solutions 🚀');`}
+                  </pre>
+                </div>
+              </div>
+
+              <div
+                id="copy-success"
+                className="hidden mt-4 px-4 py-2 bg-green-100 text-green-700 rounded-lg text-center"
+              >
+                <i className="fas fa-check-circle mr-2"></i> Code copied to clipboard!
               </div>
             </div>
           )}
