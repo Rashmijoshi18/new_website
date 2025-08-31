@@ -5,6 +5,8 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App'
 import './index.css'
 import { applyTheme, getSavedTheme } from './utils/theme'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 // Apply theme on startup (synchronously)
 applyTheme(getSavedTheme())
