@@ -52,7 +52,7 @@ export default function Sidebar() {
       {/* Mobile Drawer Backdrop */}
       {open && (
         <div 
-          className="lg:hidden fixed inset-0 bg-black bg-opacity-60 z-40"
+          className="lg:hidden fixed inset-0 bg-white bg-opacity-60 z-40"
           onClick={() => setOpen(false)}
         />
       )}
@@ -66,8 +66,8 @@ export default function Sidebar() {
         {/* Profile Header */}
         <div className="bg-gradient-to-r from-[#308D46] to-[#0B7A43] p-6 text-white">
           <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded bg-white bg-opacity-20 backdrop-blur-sm text-white flex items-center justify-center text-xl font-bold border-2 border-white border-opacity-30">
-              G
+            <div className="w-14 h-14 rounded bg-white bg-opacity-20 backdrop-blur-sm text-green-700 flex items-center justify-center text-3xl font-bold border-2 border-white border-opacity-30">
+              R
             </div>
             <div>
               <div className="text-lg font-bold">Rashmi Joshi</div>
@@ -125,7 +125,7 @@ export default function Sidebar() {
           
           <div className="relative z-10">
             <div className="flex items-center gap-4 mb-3">
-              <div className="w-12 h-12 rounded bg-white bg-opacity-20 backdrop-blur-sm text-white flex items-center justify-center text-xl font-bold border-2 border-white border-opacity-30 shadow-lg">
+              <div className="w-12 h-12 rounded bg-white bg-opacity-20 backdrop-blur-sm text-green-800 flex items-center justify-center text-3xl font-bold border-2 border-white border-opacity-30 shadow-lg">
                 R
               </div>
               {expanded && (
@@ -136,7 +136,7 @@ export default function Sidebar() {
               )}
             </div>
             {expanded && (
-              <div className="text-xs opacity-80 bg-white bg-opacity-10 rounded px-2 py-1 inline-block">
+              <div className="text-xs opacity-80 bg-white text-green-800 bg-opacity-10 rounded px-2 py-1 inline-block">
                 A Computer Science Portal
               </div>
             )}
