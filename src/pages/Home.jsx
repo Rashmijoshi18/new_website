@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -14,8 +13,8 @@ export default function Home() {
   role: 'Full Stack Developer',
   location: 'India',
   specialties: ['React', 'Node.js', 'JavaScript', 
-  'TypeScript', 'Tailwind CSS', 'MongoDB'],
-  experience: '3+ years',
+  'Git', 'Tailwind CSS', 'Bootstrap'],
+  experience: '2+ years',
   passion: 'Building scalable web applications',
   currentFocus: 'Modern web technologies & UX'
 };
@@ -28,8 +27,7 @@ console.log('Welcome to my digital world! 🚀');`;
 
         setTimeout(function () {
           copySuccess.classList.add("hidden");
-          copyButton.innerHTML =
-            '<i class="far fa-copy"></i> Copy';
+          copyButton.innerHTML = '<i class="far fa-copy"></i> Copy';
         }, 2000);
       });
     });
@@ -57,8 +55,8 @@ console.log('Welcome to my digital world! 🚀');`;
             </span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto md:mx-0">
-            Full-stack developer crafting exceptional digital experiences
-            with modern technologies
+            Full-stack developer crafting exceptional digital experiences with
+            modern technologies
           </p>
         </div>
 
@@ -83,9 +81,9 @@ console.log('Welcome to my digital world! 🚀');`;
       {/* Stats Section */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 my-12 fade-in">
         {[
-          { num: "3+", label: "Years Experience" },
-          { num: "25+", label: "Projects Completed" },
-          { num: "15+", label: "Technologies" },
+          { num: "2+", label: "Years Experience" },
+          { num: "10+", label: "Projects Completed" },
+          { num: "200+", label: "Commits Made" },
           { num: "100%", label: "Client Satisfaction" },
         ].map((stat, idx) => (
           <div
@@ -154,8 +152,8 @@ console.log('Welcome to my digital world! 🚀');`;
   name: 'Rashmi Joshi',
   role: 'Full Stack Developer',
   location: 'India',
-  specialties: ['React', 'Node.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'MongoDB'],
-  experience: '3+ years',
+  specialties: ['React', 'Node.js', 'JavaScript', 'Git', 'Tailwind CSS', 'Bootstrap'],
+  experience: '2+ years',
   passion: 'Building scalable web applications',
   currentFocus: 'Modern web technologies & UX'
 };
