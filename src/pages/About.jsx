@@ -97,10 +97,26 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
   ];
 
   const interests = [
-    { icon: Brain, title: "Artificial Intelligence", description: "Exploring artificial intelligence" },
-    { icon: Code, title: "Open Source", description: "Contributing to community projects" },
-    { icon: BookOpen, title: "Technical Writing", description: "Creating educational content" },
-    { icon: User, title: "Learning", description: "Learning new technologies and skills" },
+    {
+      icon: Brain,
+      title: "Artificial Intelligence",
+      description: "Exploring artificial intelligence",
+    },
+    {
+      icon: Code,
+      title: "Open Source",
+      description: "Contributing to community projects",
+    },
+    {
+      icon: BookOpen,
+      title: "Technical Writing",
+      description: "Creating educational content",
+    },
+    {
+      icon: User,
+      title: "Learning",
+      description: "Learning new technologies and skills",
+    },
   ];
 
   return (
@@ -111,7 +127,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
           <div className="w-20 h-20 bg-green-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
             <User className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">About Me</h1>
+          <h1 className="text-4xl font-bold text-green-700 mb-3">About Me</h1>
           <div className="w-16 h-1 bg-green-700 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600">
             Software Engineer | Problem Solver | Lifelong Learner
@@ -149,7 +165,9 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                 <div className="w-10 h-10 bg-green-800 rounded-lg flex items-center justify-center mr-3 shadow">
                   <User className="w-5 h-5 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">Introduction</h2>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  Introduction
+                </h2>
               </div>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -160,7 +178,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     I enjoy transforming complex problems into simple, intuitive
-                    experiences that delight users and solve real-world challenges.
+                    experiences that delight users and solve real-world
+                    challenges.
                   </p>
                 </div>
 
@@ -188,7 +207,6 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
               </div>
             </div>
           )}
-
           {/* Education */}
           {activeTab === "education" && (
             <div className="animate-fadeIn">
@@ -203,22 +221,33 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                 {educationData.map((edu, idx) => (
                   <div
                     key={idx}
-                    className="border border-gray-200 rounded-lg p-5 transition transform hover:scale-[1.02] hover:shadow-md"
+                    className="border border-gray-200 rounded-lg p-5 transform hover:shadow-md transition-shadow"
                   >
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
                       {edu.degree}
                     </h3>
-                    <div className="flex items-center gap-4 mb-3 text-gray-600">
+
+                    <div className="flex flex-col md:flex-row gap-4 mb-3">
+                      {/* Institution */}
                       <div className="flex items-center">
-                        <BookOpen className="w-4 h-4 mr-2" />
-                        <span className="font-medium">{edu.institution}</span>
+                        <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-2">
+                          <BookOpen className="w-4 h-4 text-green-800" />
+                        </div>
+                        <span className="text-gray-700 font-medium">
+                          {edu.institution}
+                        </span>
                       </div>
+
+                      {/* Location */}
                       <div className="flex items-center">
-                        <MapPin className="w-4 h-4 mr-2" />
-                        <span>{edu.location}</span>
+                        <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-2">
+                          <MapPin className="w-4 h-4 text-green-800" />
+                        </div>
+                        <span className="text-gray-700">{edu.location}</span>
                       </div>
                     </div>
-                    <p className="text-gray-700">{edu.description}</p>
+
+                    <p className="text-gray-700 text-sm">{edu.description}</p>
                   </div>
                 ))}
               </div>
@@ -242,8 +271,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                 <span className="text-green-700 font-semibold bg-green-50 px-2 py-1 rounded">
                   clean and maintainable code
                 </span>
-                . Every function should be purposeful, every variable meaningful,
-                and every feature should serve a real user need.
+                . Every function should be purposeful, every variable
+                meaningful, and every feature should serve a real user need.
               </p>
 
               <div className="grid md:grid-cols-3 gap-4">
@@ -252,7 +281,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                   return (
                     <div
                       key={idx}
-                      className="border border-gray-200 rounded-lg p-4 transition hover:scale-105 hover:shadow-md"
+                      className="border border-gray-200 rounded-lg p-5  transform hover:shadow-md transition-shadow"
                     >
                       <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
                         <IconComponent className="w-5 h-5 text-green-800" />
@@ -319,7 +348,9 @@ console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
                 <div className="w-10 h-10 bg-green-800 rounded-lg flex items-center justify-center mr-3 shadow">
                   <FolderOpen className="w-5 h-5 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-800">Areas of Interest</h2>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  Areas of Interest
+                </h2>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">
@@ -328,7 +359,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
                   return (
                     <div
                       key={idx}
-                      className="border border-gray-200 rounded-lg p-4 transition hover:scale-[1.02] hover:shadow-md"
+                      className="border border-gray-200 rounded-lg p-5  transform hover:shadow-md transition-shadow"
+                      // "border border-gray-200 rounded-lg p-5  transform hover:shadow-md transition-shadow"
                     >
                       <div className="flex items-start">
                         <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
