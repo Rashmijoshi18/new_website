@@ -14,6 +14,23 @@ import {
   Target,
 } from "lucide-react";
 
+// ✅ Reusable card with hover/tap effect
+function HoverCard({ children }) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      className={`border border-gray-200 rounded-lg p-5 transform transition-all duration-300 cursor-pointer 
+        ${isHovered ? "shadow-md scale-[1.02]" : ""}`}
+      onClick={() => setIsHovered(!isHovered)} // ✅ Mobile tap
+      onMouseEnter={() => setIsHovered(true)} // ✅ Desktop hover
+      onMouseLeave={() => setIsHovered(false)} // ✅ Desktop leave
+    >
+      {children}
+    </div>
+  );
+}
+
 export default function About() {
   const [activeTab, setActiveTab] = useState("intro");
 
@@ -130,7 +147,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
           <h1 className="text-4xl font-bold text-green-700 mb-3">About Me</h1>
           <div className="w-16 h-1 bg-green-700 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600">
-            Software Engineer | Problem Solver | Lifelong Learner
+            Passionate Coder | Problem Solver | Lifelong Learner
           </p>
         </div>
 
@@ -183,8 +200,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                   </p>
                 </div>
 
-                {/* Small card with hover */}
-                <div className="bg-green-50 rounded-lg p-5 border border-green-700 transition transform hover:scale-105 hover:shadow-md">
+                {/* Core strengths */}
+                <HoverCard>
                   <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
                     <Star className="w-5 h-5 text-green-700 mr-2" />
                     Core Strengths
@@ -203,10 +220,11 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                       );
                     })}
                   </div>
-                </div>
+                </HoverCard>
               </div>
             </div>
           )}
+
           {/* Education */}
           {activeTab === "education" && (
             <div className="animate-fadeIn">
@@ -219,10 +237,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 
               <div className="space-y-6">
                 {educationData.map((edu, idx) => (
-                  <div
-                    key={idx}
-                    className="border border-gray-200 rounded-lg p-5 transform hover:shadow-md transition-shadow"
-                  >
+                  <HoverCard key={idx}>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">
                       {edu.degree}
                     </h3>
@@ -248,7 +263,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                     </div>
 
                     <p className="text-gray-700 text-sm">{edu.description}</p>
-                  </div>
+                  </HoverCard>
                 ))}
               </div>
             </div>
@@ -279,10 +294,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                 {philosophyPrinciples.map((principle, idx) => {
                   const IconComponent = principle.icon;
                   return (
-                    <div
-                      key={idx}
-                      className="border border-gray-200 rounded-lg p-5  transform hover:shadow-md transition-shadow"
-                    >
+                    <HoverCard key={idx}>
                       <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-3">
                         <IconComponent className="w-5 h-5 text-green-800" />
                       </div>
@@ -292,54 +304,12 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                       <p className="text-gray-600 text-sm">
                         {principle.description}
                       </p>
-                    </div>
+                    </HoverCard>
                   );
                 })}
               </div>
             </div>
           )}
-
-          {/* Approach */}
-          {/* {activeTab === "approach" && (
-            <div className="animate-fadeIn">
-              <div className="flex items-center mb-6 pb-3 border-b border-green-800">
-                <div className="w-10 h-10 bg-green-800 rounded-lg flex items-center justify-center mr-3 shadow">
-                  <Code className="w-5 h-5 text-white" />
-                </div>
-                <h2 className="text-2xl font-bold text-gray-900">
-                  Development Approach
-                </h2>
-              </div>
-
-              <div className="code-block relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
-                <div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
-                  <div className="flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
-                      <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full"></div>
-                      <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
-                    </div>
-                    <span className="text-gray-400 text-xs font-mono ml-2">
-                      myApproach.js
-                    </span>
-                  </div>
-                  <button className="copy-btn flex items-center gap-1 px-2.5 py-1.5 text-xs text-gray-300 hover:text-white bg-gray-700 hover:bg-gray-600 rounded transition-colors">
-                    <i className="far fa-copy"></i> <span>Copy</span>
-                  </button>
-                </div>
-                <div className="p-4 overflow-x-auto">
-                  <pre className="text-sm text-gray-300 font-mono leading-relaxed">{`const myApproach = {
-  focus: "User Experience",
-  codeStyle: "Clean & Maintainable",
-  testing: "Test-Driven Development",
-  learning: "Continuous Growth"
-};
-
-console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
-                </div>
-              </div>
-            </div>
-          )} */}
 
           {/* Approach */}
           {activeTab === "approach" && (
@@ -384,7 +354,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
                 </div>
               </div>
 
-              {/* ✅ Success message like Home.jsx */}
+              {/* ✅ Success message */}
               <div
                 id="copy-success"
                 className="hidden mt-4 px-4 py-2 bg-green-100 text-green-700 rounded-lg text-center"
@@ -411,11 +381,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
                 {interests.map((interest, idx) => {
                   const IconComponent = interest.icon;
                   return (
-                    <div
-                      key={idx}
-                      className="border border-gray-200 rounded-lg p-5  transform hover:shadow-md transition-shadow"
-                      // "border border-gray-200 rounded-lg p-5  transform hover:shadow-md transition-shadow"
-                    >
+                    <HoverCard key={idx}>
                       <div className="flex items-start">
                         <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
                           <IconComponent className="w-4 h-4 text-green-800" />
@@ -429,7 +395,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </HoverCard>
                   );
                 })}
               </div>
