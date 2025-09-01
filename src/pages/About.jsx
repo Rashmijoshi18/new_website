@@ -300,7 +300,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
           )}
 
           {/* Approach */}
-          {activeTab === "approach" && (
+          {/* {activeTab === "approach" && (
             <div className="animate-fadeIn">
               <div className="flex items-center mb-6 pb-3 border-b border-green-800">
                 <div className="w-10 h-10 bg-green-800 rounded-lg flex items-center justify-center mr-3 shadow">
@@ -337,6 +337,60 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 
 console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
                 </div>
+              </div>
+            </div>
+          )} */}
+
+          {/* Approach */}
+          {activeTab === "approach" && (
+            <div className="animate-fadeIn">
+              <div className="flex items-center mb-6 pb-3 border-b border-green-800">
+                <div className="w-10 h-10 bg-green-800 rounded-lg flex items-center justify-center mr-3 shadow">
+                  <Code className="w-5 h-5 text-white" />
+                </div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  Development Approach
+                </h2>
+              </div>
+
+              <div className="code-block relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
+                {/* Header */}
+                <div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
+                  <div className="flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 bg-red-500 rounded-full"></div>
+                      <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full"></div>
+                      <div className="w-2.5 h-2.5 bg-green-500 rounded-full"></div>
+                    </div>
+                    <span className="text-gray-400 text-xs font-mono ml-2">
+                      myApproach.js
+                    </span>
+                  </div>
+                  <button className="copy-btn flex items-center gap-1 px-2.5 py-1.5 text-xs text-gray-300 hover:text-white bg-gray-700 hover:bg-gray-600 rounded transition-colors">
+                    <i className="far fa-copy"></i> <span>Copy</span>
+                  </button>
+                </div>
+
+                {/* Code Content */}
+                <div className="p-4 overflow-x-auto">
+                  <pre className="text-sm text-gray-300 font-mono leading-relaxed">{`const myApproach = {
+  focus: "User Experience",
+  codeStyle: "Clean & Maintainable",
+  testing: "Test-Driven Development",
+  learning: "Continuous Growth"
+};
+
+console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
+                </div>
+              </div>
+
+              {/* ✅ Success message like Home.jsx */}
+              <div
+                id="copy-success"
+                className="hidden mt-4 px-4 py-2 bg-green-100 text-green-700 rounded-lg text-center"
+              >
+                <i className="fas fa-check-circle mr-2"></i> Code copied to
+                clipboard!
               </div>
             </div>
           )}
