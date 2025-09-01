@@ -202,8 +202,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 
                 {/* Core strengths */}
                 <HoverCard>
-                  <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                    <Star className="w-5 h-5 text-green-700 mr-2" />
+                  <h3 className="bg-green-50 text-lg font-bold text-gray-800 mb-4 flex items-center">
+                    <Star className="w-5 h-5 bg-green-50 text-green-700 mr-2" />
                     Core Strengths
                   </h3>
                   <div className="space-y-3">
@@ -212,7 +212,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
                       return (
                         <div
                           key={idx}
-                          className="flex items-center transition duration-300 hover:translate-x-1"
+                          className="flex items-center bg-green-50 transition duration-300 hover:translate-x-1"
                         >
                           <IconComponent className="w-4 h-4 text-green-700 mr-3" />
                           <span className="text-gray-700">{strength.text}</span>
