@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import profileImage from "../assets/me.png";
 import {
   User,
   GraduationCap,
@@ -141,9 +142,17 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-10">
-          <div className="w-20 h-20 bg-green-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-            <User className="w-10 h-10 text-white" />
+          {/* <div className="w-20 h-20 bg-green-700 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+            <User className="w-10 h-10 text-white" /> */}
+          {/* </div> */}
+          <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-md border-2 border-green-700">
+            <img
+              src={profileImage}
+              alt="Rashmi Joshi"
+              className="w-full h-full object-cover"
+            />
           </div>
+
           <h1 className="text-4xl font-bold text-green-700 mb-3">About Me</h1>
           <div className="w-16 h-1 bg-green-700 mx-auto mb-4"></div>
           <p className="text-lg text-gray-600">
