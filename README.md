@@ -131,12 +131,8 @@ new_website/
 │   │   └── Skills.jsx    # Skills showcase page
 │   └── utils/            # Utility functions and helpers
 │       ├── theme.js      # Theme management utilities
-│       ├── App.jsx       # App configuration
-│       └── index.css     # Additional utility styles
 └── dist/                 # Built files (generated after npm run build)
-    ├── index.html
-    ├── assets/
-    └── ...
+
 ```
 
 ### Key Directories Explained:
@@ -176,21 +172,10 @@ new_website/
 
 ## 🚀 Deployment
 
-### Netlify
-
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder to Netlify
-
 ### Vercel
 
 1. Connect your GitHub repository to Vercel
 2. Vercel will automatically detect it's a Vite project and deploy
-
-### GitHub Pages
-
-1. Install gh-pages: `npm install --save-dev gh-pages`
-2. Add to package.json scripts: `"deploy": "gh-pages -d dist"`
-3. Run: `npm run build && npm run deploy`
 
 ## 🤝 Contributing
 
