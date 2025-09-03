@@ -6,7 +6,7 @@ const projects = [
   {
     title: "TypeMaster",
     description:
-      "A responsive online code editor that supports HTML, CSS, and JavaScript with real-time preview. Built with React and Node.js.",
+      "A typing‑practice web app that measures WPM and accuracy in real‑time via customizable tests.",
     image: type,
     tech: ["React", "Tailwind CSS", "JavaScript"],
     demo: "https://type-master-seven.vercel.app/",
