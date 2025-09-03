@@ -37,15 +37,21 @@ const SimpleSkillsPage = () => {
       category: "Frontend",
     },
     {
+      name: "Tailwind CSS / Bootstrap",
+      level: 75,
+      icon: <code className="w-5 h-5" />,
+      category: "Frontend",
+    },
+    {
       name: "Node.js",
       level: 80,
       icon: <Server className="w-5 h-5" />,
       category: "Backend",
     },
     {
-      name: "Python",
-      level: 88,
-      icon: <Code className="w-5 h-5" />,
+      name: "Express.js",
+      level: 80,
+      icon: <Server className="w-5 h-5" />,
       category: "Backend",
     },
     {
@@ -59,6 +65,24 @@ const SimpleSkillsPage = () => {
       level: 80,
       icon: <Database className="w-5 h-5" />,
       category: "Database",
+    },
+    {
+      name: "Git/Github",
+      level: 88,
+      icon: <Code className="w-5 h-5" />,
+      category: "Tool",
+    },
+    {
+      name: "Vite",
+      level: 88,
+      icon: <Code className="w-5 h-5" />,
+      category: "Tool",
+    },
+    {
+      name: "Vercel",
+      level: 88,
+      icon: <Code className="w-5 h-5" />,
+      category: "Hosting & Deployment",
     },
   ];
 

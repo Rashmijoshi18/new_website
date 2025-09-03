@@ -1,14 +1,3 @@
-// src/utils/theme.js
-/**
- * Theme helper
- * - uses localStorage 'theme' key ('light' | 'dark')
- * - applies the 'dark' class to document.documentElement when dark
- * - returns current theme
- */
-
-/**
- * Get saved theme from localStorage. If none, detect prefer-color-scheme.
- */
 export function getSavedTheme() {
   try {
     const t = localStorage.getItem('theme');
