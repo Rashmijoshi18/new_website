@@ -14,7 +14,7 @@ export default function Home() {
   location: 'India',
   specialties: ['React', 'Node.js', 'JavaScript', 
   'Git', 'Tailwind CSS', 'Bootstrap'],
-  experience: '2+ years',
+  Current Status: '2nd Year Student',
   passion: 'Building scalable web applications',
   currentFocus: 'Modern web technologies & UX'
 };
@@ -81,10 +81,10 @@ console.log('Welcome to my digital world! 🚀');`;
       {/* Stats Section */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 my-12 fade-in">
         {[
-          { num: "2+", label: "Years Experience" },
-          { num: "10+", label: "Projects Completed" },
+          { num: "18+", label: "Months Learning Code" },
+          { num: "10+", label: "Projects Built" },
           { num: "200+", label: "Commits Made" },
-          { num: "100%", label: "Client Satisfaction" },
+          { num: "100%", label: "Passion for Learning" },
         ].map((stat, idx) => (
           <div
             key={idx}
@@ -153,7 +153,7 @@ console.log('Welcome to my digital world! 🚀');`;
   role: 'Full Stack Developer',
   location: 'India',
   specialties: ['React', 'Node.js', 'JavaScript', 'Git', 'Tailwind CSS', 'Bootstrap'],
-  experience: '2+ years',
+  Current Status: '2nd Year Student',
   passion: 'Building scalable web applications',
   currentFocus: 'Modern web technologies & UX'
 };
