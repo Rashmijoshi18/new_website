@@ -100,25 +100,24 @@ export default function Projects() {
 										</span>
 									))}
 								</div>
-
 								{/* Action Links */}
-								<div className="flex gap-4">
+								<div className="flex gap-4 flex-wrap">
 									<a
 										href={project.demo}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="bg-green-700 text-white px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
+										className="bg-green-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base"
 									>
-										<ExternalLink size={18} />
+										<ExternalLink size={16} className="sm:w-5 sm:h-5" />
 										Live Demo
 									</a>
 									<a
 										href={project.code}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="border-2 border-green-600 text-green-600 px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
+										className="border-2 border-green-600 text-green-600 px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base"
 									>
-										<Github size={18} />
+										<Github size={16} className="sm:w-5 sm:h-5" />
 										View Code
 									</a>
 								</div>
@@ -138,11 +137,11 @@ export default function Projects() {
 								href="https://github.com/Rashmijoshi18"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-3 bg-green-700 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+								className="inline-flex items-center gap-2 bg-green-700 text-white px-5 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base"
 							>
-								<Github size={20} />
+								<Github size={16} className="sm:w-5 sm:h-5" />
 								Explore All Projects
-								<ArrowUpRight size={20} />
+								<ArrowUpRight size={16} className="sm:w-5 sm:h-5" />
 							</a>
 						</div>
 					</div>
