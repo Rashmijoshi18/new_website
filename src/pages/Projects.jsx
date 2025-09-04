@@ -12,6 +12,15 @@ const projects = [
     demo: "https://type-master-seven.vercel.app/",
     code: "https://github.com/Rashmijoshi18/type-master",
   },
+  {
+    title: "TypeMaster",
+    description:
+      "A typing‑practice web app that measures WPM and accuracy in real‑time via customizable tests.",
+    image: type,
+    tech: ["React", "Tailwind CSS", "JavaScript"],
+    demo: "https://type-master-seven.vercel.app/",
+    code: "https://github.com/Rashmijoshi18/type-master",
+  },
 ];
 
 export default function Projects() {
