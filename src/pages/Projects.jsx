@@ -4,7 +4,7 @@ import weather_check from "../assets/weather.jpeg";
 import fit from "../assets/fitlife.jpeg";
 import { ExternalLink, Github, ArrowUpRight, Code2 } from "lucide-react";
 
-// Mock images for demonstration
+// images add
 const projects = [
 	{
 		title: "TypeMaster",
