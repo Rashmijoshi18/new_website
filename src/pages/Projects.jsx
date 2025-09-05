@@ -128,11 +128,11 @@ export default function Projects() {
 
 				{/* Enhanced Call to Action */}
 				<div className="text-center mt-20">
-					<div className="relative inline-block">
+					<div className="relative inline-block w-full">
 						<div className="absolute inset-0 bg-green-700 rounded-2xl blur opacity-75"></div>
 						<div className="relative bg-white/95 backdrop-blur-sm px-12 py-8 rounded-2xl border border-white/50 shadow-xl">
 							<h3 className="text-2xl font-bold text-gray-800 mb-2">Interested in more work?</h3>
-							<p className="text-gray-600 mb-6">Check out my complete portfolio on GitHub</p>
+							<p className="text-gray-600 mb-6">Check out my complete projects on GitHub</p>
 							<a
 								href="https://github.com/Rashmijoshi18"
 								target="_blank"
