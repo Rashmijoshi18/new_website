@@ -6,31 +6,31 @@ export default function Home() {
 		const copyButton = document.querySelector(".copy-btn");
 		const copySuccess = document.getElementById("copy-success");
 
-		// Copy functionality
-		copyButton.addEventListener("click", function () {
-			const code = `const developer = {
+		if (copyButton) {
+			copyButton.addEventListener("click", function () {
+				const code = `const developer = {
   name: 'Rashmi Joshi',
   role: 'Full Stack Developer',
   location: 'India',
-  specialties: ['React', 'Node.js', 'JavaScript', 
-  'Git', 'Tailwind CSS', 'Bootstrap'],
-  Current Status: '2nd Year Student',
+  specialties: ['React', 'Node.js', 'JavaScript', 'Git', 'Tailwind CSS', 'Bootstrap'],
+  currentStatus: '2nd Year Student',
   passion: 'Building scalable web applications',
   currentFocus: 'Modern web technologies & UX'
 };
 
 console.log('Welcome to my digital world! 🚀');`;
 
-			navigator.clipboard.writeText(code).then(function () {
-				copySuccess.classList.remove("hidden");
-				copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
+				navigator.clipboard.writeText(code).then(function () {
+					copySuccess.classList.remove("hidden");
+					copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
 
-				setTimeout(function () {
-					copySuccess.classList.add("hidden");
-					copyButton.innerHTML = '<i class="far fa-copy"></i> Copy';
-				}, 2000);
+					setTimeout(function () {
+						copySuccess.classList.add("hidden");
+						copyButton.innerHTML = '<i class="far fa-copy"></i> Copy';
+					}, 2000);
+				});
 			});
-		});
+		}
 
 		// Hover effects for cards
 		const cards = document.querySelectorAll(".stat-card, .service-card");
@@ -82,7 +82,7 @@ console.log('Welcome to my digital world! 🚀');`;
 				{[
 					{ num: "14+", label: "Months Learning Code" },
 					{ num: "10+", label: "Projects Built" },
-					{ num: "200+", label: "Commits Made" },
+					{ num: "250+", label: "Commits Made" },
 					{ num: "100%", label: "Passion for Learning" },
 				].map((stat, idx) => (
 					<div
@@ -145,7 +145,7 @@ console.log('Welcome to my digital world! 🚀');`;
   role: 'Full Stack Developer',
   location: 'India',
   specialties: ['React', 'Node.js', 'JavaScript', 'Git', 'Tailwind CSS', 'Bootstrap'],
-  Current Status: '2nd Year Student',
+  currentStatus: '2nd Year Student',
   passion: 'Building scalable web applications',
   currentFocus: 'Modern web technologies & UX'
 };
@@ -202,27 +202,6 @@ console.log('Welcome to my digital world! 🚀');`}
 					))}
 				</div>
 			</section>
-
-			{/* Footer */}
-			{/* <footer className="text-center py-8 text-gray-600 border-t border-gray-200 mt-12 fade-in">
-        <p>© 2023 Rashmi Joshi. All rights reserved.</p>
-        <div className="flex justify-center space-x-4 mt-4">
-          {[
-            { icon: "fab fa-github", link: "#" },
-            { icon: "fab fa-linkedin", link: "#" },
-            { icon: "fab fa-twitter", link: "#" },
-            { icon: "fab fa-dev", link: "#" },
-          ].map((social, idx) => (
-            <a
-              key={idx}
-              href={social.link}
-              className="text-gray-500 hover:text-[#308D46]"
-            >
-              <i className={social.icon}></i>
-            </a>
-          ))}
-        </div>
-      </footer> */}
 		</div>
 	);
 }
