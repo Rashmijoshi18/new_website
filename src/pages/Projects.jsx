@@ -19,7 +19,7 @@ const projects = [
 		description: "Real-time weather updates and forecasts based on user location with beautiful UI.",
 		image: weather_check,
 		tech: ["JavaScript", "API", "HTML", "CSS"],
-		demo: "https://weather-check-beta.vercel.app/",
+		demo: "https://weather-check-nine-lovat.vercel.app/",
 		code: "https://github.com/Rashmijoshi18/weather-check",
 	},
 	{
