@@ -63,7 +63,6 @@ const ContactPage = () => {
 
 			{/* Content */}
 			<main className="flex-1 max-w-6xl mx-auto px-4 py-12">
-				{/* Contact Methods */}
 				<section className="mb-12">
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 						{[
@@ -72,8 +71,8 @@ const ContactPage = () => {
 								title: "Email",
 								desc: "rashmijoshi3699@gmail.com",
 								subtitle: "Send me a message anytime",
-								link: "mailto:rashmijoshi3699@gmail.com",
-								target: "_self",
+								link: "https://mail.google.com/mail/?view=cm&fs=1&to=rashmijoshi3699@gmail.com&su=Hello%20Rashmi&body=I%20would%20like%20to%20connect%20with%20you.",
+								target: "_blank", // open in new tab
 							},
 							{
 								icon: <Linkedin size={24} className="text-green-700" />,
