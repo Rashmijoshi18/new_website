@@ -7,32 +7,30 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 import { i } from "framer-motion/client";
 
 export default function App() {
-  return (
-    <div className="min-h-screen  text-gray-800 transition-colors flex flex-col lg:flex-row">
-      {/* Left Sidebar */}
-      <Sidebar />
+	return (
+		<div className="min-h-screen  text-gray-800 transition-colors flex flex-col lg:flex-row">
+			{/* Left Sidebar */}
+			<Sidebar />
 
-      {/* Main content wrapper */}
-      <div className="flex-1 flex flex-col">
-        {/* Main content */}
-        <main className="flex-1 px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
+			{/* Main content wrapper */}
+			<div className="flex-1 flex flex-col">
+				{/* Main content */}
+				<main className="flex-1 px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/projects" element={<Projects />} />
+						<Route path="/skills" element={<Skills />} />
+						<Route path="/contact" element={<Contact />} />
+					</Routes>
+				</main>
 
-        {/* Footer */}
-        <Footer />
-      </div>
-    </div>
-  );
+				{/* Footer */}
+				<Footer />
+			</div>
+		</div>
+	);
 }
