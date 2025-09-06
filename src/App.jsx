@@ -10,7 +10,7 @@ import Contact from "./pages/Contact";
 
 export default function App() {
 	return (
-		<div className="min-h-screen  text-gray-800 transition-colors flex flex-col lg:flex-row">
+		<div className="min-h-screen bg-background text-main transition-colors flex flex-col lg:flex-row">
 			{/* Left Sidebar */}
 			<Sidebar />
 

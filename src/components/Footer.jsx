@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
 	return (
-		<footer className="w-full border-t border-gray-200 bg-gradient-to-r from-gray-50 to-green-50 text-gray-700 text-sm">
+		<footer className="w-full border-t border-gray-200 dark:border-gray-700 bg-gradient-to-r from-gray-50 to-green-50 dark:from-gray-800 dark:to-gray-900 text-gray-700 dark:text-gray-300 text-sm">
 			<div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-6 lg:px-12 py-6">
 				{/* Left Section */}
 				<div className="flex items-center mb-3 md:mb-0 text-center md:text-left">
@@ -19,7 +19,7 @@ export default function Footer() {
 						href="https://github.com/Rashmijoshi18"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-2 text-gray-700 hover:text-[#308D46] transition-all"
+						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[#308D46] transition-all"
 					>
 						<Github className="w-4 h-4" />
 						<span className="hidden sm:inline font-medium">GitHub</span>
@@ -28,7 +28,7 @@ export default function Footer() {
 						href="https://linkedin.com/"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-2 text-gray-700 hover:text-[#308D46] transition-all"
+						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[#308D46] transition-all"
 					>
 						<Linkedin className="w-4 h-4" />
 						<span className="hidden sm:inline font-medium">LinkedIn</span>
@@ -37,7 +37,7 @@ export default function Footer() {
 						href="https://mail.google.com/mail/?view=cm&fs=1&to=rashmijoshi3699@gmail.com&su=Hello%20Rashmi&body=I%20would%20like%20to%20connect%20with%20you."
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-2 text-gray-700 hover:text-[#308D46] transition-all"
+						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[#308D46] transition-all"
 					>
 						<Mail className="w-4 h-4" />
 						<span className="hidden sm:inline font-medium">Email</span>
@@ -49,7 +49,7 @@ export default function Footer() {
 			<div className="px-6 lg:px-12 pb-4">
 				<div className="flex items-center justify-center gap-2">
 					<div className="w-2 h-2 bg-[#308D46] rounded-full animate-pulse"></div>
-					<p className="text-xs text-gray-600">Ready to code</p>
+					<p className="text-xs text-gray-600 dark:text-gray-400">Ready to code</p>
 				</div>
 			</div>
 		</footer>
