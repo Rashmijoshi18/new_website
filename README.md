@@ -4,32 +4,32 @@ A modern, responsive portfolio website built with React and Vite, showcasing per
 
 ## 🚀 Features
 
-- **React 18+** - Latest React features with hooks and functional components
-- **Vite** - Lightning-fast build tool and development server
-- **Multi-page Navigation** - Home, About, Projects, Skills, and Contact pages
-- **Component-based Architecture** - Modular, reusable UI components
-- **Theme Toggle** - Dark/light mode switching capability
-- **Responsive Design** - Mobile-first approach for all devices
-- **Project Portfolio** - Interactive project cards and showcases
-- **Skills Showcase** - Dynamic skill pills and badges
-- **Professional Experience** - Structured experience timeline
-- **Hot Module Replacement (HMR)** - Instant updates during development
-- **ESLint** - Code quality and consistency
+-   **React 18+** - Latest React features with hooks and functional components
+-   **Vite** - Lightning-fast build tool and development server
+-   **Multi-page Navigation** - Home, About, Projects, Skills, and Contact pages
+-   **Component-based Architecture** - Modular, reusable UI components
+-   **Theme Toggle** - Dark/light mode switching capability
+-   **Responsive Design** - Mobile-first approach for all devices
+-   **Project Portfolio** - Interactive project cards and showcases
+-   **Skills Showcase** - Dynamic skill pills and badges
+-   **Professional Experience** - Structured experience timeline
+-   **Hot Module Replacement (HMR)** - Instant updates during development
+-   **ESLint** - Code quality and consistency
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** React
-- **Build Tool:** Vite
-- **Language:** JavaScript
-- **Linting:** ESLint
-- **Package Manager:** npm/yarn
+-   **Frontend Framework:** React
+-   **Build Tool:** Vite
+-   **Language:** JavaScript
+-   **Linting:** ESLint
+-   **Package Manager:** npm/yarn
 
 ## 📋 Prerequisites
 
 Before running this project, make sure you have:
 
-- Node.js (version 14.0 or higher)
-- npm or yarn package manager
+-   Node.js (version 14.0 or higher)
+-   npm or yarn package manager
 
 ## 🚀 Getting Started
 
@@ -37,33 +37,33 @@ Before running this project, make sure you have:
 
 1. **Clone the repository**
 
-   ```bash
-   git clone https://github.com/Rashmijoshi18/new_website.git
-   cd new_website
-   ```
+    ```bash
+    git clone https://github.com/Rashmijoshi18/new_website.git
+    cd new_website
+    ```
 
 2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-   or
-   ```bash
-   yarn install
-   ```
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    yarn install
+    ```
 
 ### Development
 
 3. **Start the development server**
 
-   ```bash
-   npm run dev
-   ```
+    ```bash
+    npm run dev
+    ```
 
-   or
+    or
 
-   ```bash
-   yarn dev
-   ```
+    ```bash
+    yarn dev
+    ```
 
 4. **Open your browser**
    Navigate to `http://localhost:5173` (or the port shown in your terminal)
@@ -72,24 +72,24 @@ Before running this project, make sure you have:
 
 5. **Build the project**
 
-   ```bash
-   npm run build
-   ```
+    ```bash
+    npm run build
+    ```
 
-   or
+    or
 
-   ```bash
-   yarn build
-   ```
+    ```bash
+    yarn build
+    ```
 
 6. **Preview the build**
-   ```bash
-   npm run preview
-   ```
-   or
-   ```bash
-   yarn preview
-   ```
+    ```bash
+    npm run preview
+    ```
+    or
+    ```bash
+    yarn preview
+    ```
 
 ## 📁 Project Structure
 
@@ -112,7 +112,6 @@ new_website/
 │   │   └── react.svg     # React logo
 │   ├── components/       # Reusable React components
 │   │   ├── Footer.jsx    # Footer component
-│   │   ├── NavItem.jsx   # Navigation item component
 │   │   ├── ProjectCard.jsx # Project card component
 │   │   ├── Sidebar.jsx   # Sidebar navigation component
 │   │   ├── SkillPill.jsx # Skill badge/pill component
@@ -137,38 +136,38 @@ new_website/
 
 ### Key Directories Explained:
 
-- **`src/assets/`** - Images, icons, and media files (me.png for profile picture)
-- **`src/components/`** - Reusable UI components (Footer, Sidebar, ProjectCard, etc.)
-- **`src/data/`** - Static data files for experience, projects, and skills
-- **`src/pages/`** - Individual page components for routing (Home, About, Contact, etc.)
-- **`src/utils/`** - Utility functions and helper files (theme management, etc.)
-- **`public/`** - Static files served directly without processing
-- **`dist/`** - Production build output (created after running `npm run build`)
+-   **`src/assets/`** - Images, icons, and media files (me.png for profile picture)
+-   **`src/components/`** - Reusable UI components (Footer, Sidebar, ProjectCard, etc.)
+-   **`src/data/`** - Static data files for experience, projects, and skills
+-   **`src/pages/`** - Individual page components for routing (Home, About, Contact, etc.)
+-   **`src/utils/`** - Utility functions and helper files (theme management, etc.)
+-   **`public/`** - Static files served directly without processing
+-   **`dist/`** - Production build output (created after running `npm run build`)
 
 ## 🔧 Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build locally
-- `npm run lint` - Run ESLint for code quality checks
+-   `npm run dev` - Start development server
+-   `npm run build` - Build for production
+-   `npm run preview` - Preview production build locally
+-   `npm run lint` - Run ESLint for code quality checks
 
 ## 🎨 Customization
 
 ### Styling
 
-- Modify `src/index.css` for global styles
-- Add component-specific CSS files in the `src/components/` directory
-- Consider using CSS modules or styled-components for component styling
+-   Modify `src/index.css` for global styles
+-   Add component-specific CSS files in the `src/components/` directory
+-   Consider using CSS modules or styled-components for component styling
 
 ### Components
 
-- Create new React components in the `src/components/` directory
-- Import and use components in `src/App.jsx` or other components
+-   Create new React components in the `src/components/` directory
+-   Import and use components in `src/App.jsx` or other components
 
 ### Configuration
 
-- Vite configuration can be modified in `vite.config.js`
-- ESLint rules can be adjusted in `.eslintrc.cjs`
+-   Vite configuration can be modified in `vite.config.js`
+-   ESLint rules can be adjusted in `.eslintrc.cjs`
 
 ## 🚀 Deployment
 

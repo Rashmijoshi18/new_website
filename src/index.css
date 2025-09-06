@@ -1,7 +1,347 @@
 @import "tailwindcss";
 
+/* Dark mode variant configuration for Tailwind CSS */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Complete Simple Color System - All Colors You Need */
+:root {
+	/* Primary Colors (Green) */
+	--primary: rgb(34, 139, 34); /* Green-600 */
+	--primary-hover: rgb(22, 101, 52); /* Green-700 */
+	--primary-light: rgb(240, 253, 244); /* Green-50 */
+	--primary-soft: rgb(74, 222, 128); /* Green-400 */
+
+	/* Background Colors */
+	--background: rgb(255, 255, 255); /* White */
+	--surface: rgb(249, 250, 251); /* Gray-50 */
+	--surface-elevated: rgb(243, 244, 246); /* Gray-100 */
+	--surface-hover: rgb(243, 244, 246); /* Gray-100 */
+
+	/* Text Colors */
+	--text: rgb(17, 24, 39); /* Gray-900 */
+	--text-light: rgb(75, 85, 99); /* Gray-600 */
+	--text-lighter: rgb(107, 114, 128); /* Gray-500 */
+	--text-subtle: rgb(156, 163, 175); /* Gray-400 */
+
+	/* Border Colors */
+	--border: rgb(229, 231, 235); /* Gray-200 */
+	--border-subtle: rgb(243, 244, 246); /* Gray-100 */
+
+	/* Code Block Colors */
+	--code-bg: rgb(17, 24, 39); /* Gray-900 */
+	--code-header: rgb(31, 41, 55); /* Gray-800 */
+	--code-text: rgb(209, 213, 219); /* Gray-300 */
+	--code-border: rgb(75, 85, 99); /* Gray-600 */
+
+	/* Badge Colors */
+	--badge-bg: rgb(243, 244, 246); /* Gray-100 */
+	--badge-text: rgb(55, 65, 81); /* Gray-700 */
+
+	/* Status Colors */
+	--success: rgb(34, 197, 94); /* Green-500 */
+	--success-light: rgb(240, 253, 244); /* Green-50 */
+	--warning: rgb(245, 158, 11); /* Yellow-500 */
+	--error: rgb(239, 68, 68); /* Red-500 */
+
+	/* Special Colors */
+	--white: rgb(255, 255, 255);
+	--black: rgb(0, 0, 0);
+	--focus: rgb(34, 139, 34); /* Same as primary */
+}
+
+/* Dark Mode */
+.dark {
+	/* Primary Colors (Green) */
+	--primary: rgb(34, 139, 34); /* Green-600 */
+	--primary-hover: rgb(22, 101, 52); /* Green-700 */
+	--primary-light: rgb(20, 83, 45); /* Dark Green-900 */
+	--primary-soft: rgb(74, 222, 128); /* Green-400 */
+
+	/* Background Colors */
+	--background: rgb(17, 24, 39); /* Gray-900 */
+	--surface: rgb(31, 41, 55); /* Gray-800 */
+	--surface-elevated: rgb(55, 65, 81); /* Gray-700 */
+	--surface-hover: rgb(55, 65, 81); /* Gray-700 */
+
+	/* Text Colors */
+	--text: rgb(249, 250, 251); /* Gray-50 */
+	--text-light: rgb(209, 213, 219); /* Gray-300 */
+	--text-lighter: rgb(107, 114, 128); /* Gray-500 */
+	--text-subtle: rgb(156, 163, 175); /* Gray-400 */
+
+	/* Border Colors */
+	--border: rgb(75, 85, 99); /* Gray-600 */
+	--border-subtle: rgb(55, 65, 81); /* Gray-700 */
+
+	/* Code Block Colors */
+	--code-bg: rgb(0, 0, 0); /* Pure Black */
+	--code-header: rgb(17, 24, 39); /* Gray-900 */
+	--code-text: rgb(229, 231, 235); /* Gray-200 */
+	--code-border: rgb(107, 114, 128); /* Gray-500 */
+
+	/* Badge Colors */
+	--badge-bg: rgb(55, 65, 81); /* Gray-700 */
+	--badge-text: rgb(209, 213, 219); /* Gray-300 */
+
+	/* Status Colors */
+	--success: rgb(74, 222, 128); /* Green-400 */
+	--success-light: rgb(20, 83, 45); /* Dark Green-900 */
+	--warning: rgb(251, 191, 36); /* Yellow-400 */
+	--error: rgb(248, 113, 113); /* Red-400 */
+
+	/* Focus */
+	--focus: rgb(74, 222, 128); /* Green-400 */
+}
+
+/* Base Styles */
 body {
-	font-family: "Inter", sans-serif;
+	background-color: var(--background);
+	color: var(--text);
+	transition: background-color 0.3s ease, color 0.3s ease;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Simple Utility Classes - All Colors */
+
+/* Background Colors */
+.bg-primary {
+	background-color: var(--primary);
+}
+.bg-primary-hover {
+	background-color: var(--primary-hover);
+}
+.bg-primary-light {
+	background-color: var(--primary-light);
+}
+.bg-primary-soft {
+	background-color: var(--primary-soft);
+}
+.bg-background {
+	background-color: var(--background);
+}
+.bg-surface {
+	background-color: var(--surface);
+}
+.bg-surface-elevated {
+	background-color: var(--surface-elevated);
+}
+.bg-surface-hover {
+	background-color: var(--surface-hover);
+}
+.bg-code {
+	background-color: var(--code-bg);
+}
+.bg-code-header {
+	background-color: var(--code-header);
+}
+.bg-badge {
+	background-color: var(--badge-bg);
+}
+.bg-success {
+	background-color: var(--success);
+}
+.bg-success-light {
+	background-color: var(--success-light);
+}
+.bg-warning {
+	background-color: var(--warning);
+}
+.bg-error {
+	background-color: var(--error);
+}
+.bg-white {
+	background-color: var(--white);
+}
+.bg-black {
+	background-color: var(--black);
+}
+
+/* Text Colors */
+.text-primary {
+	color: var(--primary);
+}
+.text-primary-hover {
+	color: var(--primary-hover);
+}
+.text-primary-soft {
+	color: var(--primary-soft);
+}
+.text-main {
+	color: var(--text);
+}
+.text-light {
+	color: var(--text-light);
+}
+.text-lighter {
+	color: var(--text-lighter);
+}
+.text-subtle {
+	color: var(--text-subtle);
+}
+.text-code {
+	color: var(--code-text);
+}
+.text-badge {
+	color: var(--badge-text);
+}
+.text-success {
+	color: var(--success);
+}
+.text-warning {
+	color: var(--warning);
+}
+.text-error {
+	color: var(--error);
+}
+.text-white {
+	color: var(--white);
+}
+.text-black {
+	color: var(--black);
+}
+
+/* Border Colors */
+.border-main {
+	border-color: var(--border);
+}
+.border-subtle {
+	border-color: var(--border-subtle);
+}
+.border-primary {
+	border-color: var(--primary);
+}
+.border-primary-hover {
+	border-color: var(--primary-hover);
+}
+.border-code {
+	border-color: var(--code-border);
+}
+
+/* Hover States */
+.hover-bg-primary:hover {
+	background-color: var(--primary);
+}
+.hover-bg-primary-hover:hover {
+	background-color: var(--primary-hover);
+}
+.hover-bg-surface-hover:hover {
+	background-color: var(--surface-hover);
+}
+.hover-text-primary:hover {
+	color: var(--primary);
+}
+.hover-text-main:hover {
+	color: var(--text);
+}
+
+/* Legacy class names for backward compatibility - DO NOT REMOVE */
+.text-theme-success {
+	color: var(--success);
+}
+.bg-theme-badge {
+	background-color: var(--badge-bg);
+}
+.text-theme-badge {
+	color: var(--badge-text);
+}
+.text-theme-sidebar-accent {
+	color: var(--primary);
+}
+.bg-theme-background {
+	background-color: var(--background);
+}
+.border-theme-primary {
+	border-color: var(--primary);
+}
+.text-theme-primary {
+	color: var(--primary);
+}
+.text-theme-brand {
+	color: var(--primary);
+}
+.hover-bg-theme-surface-hover:hover {
+	background-color: var(--surface-hover);
+}
+.bg-theme-sidebar-accent {
+	background-color: var(--primary);
+}
+.text-theme-subtle {
+	color: var(--text-subtle);
+}
+.bg-theme-surface {
+	background-color: var(--surface);
+}
+.border-theme {
+	border-color: var(--border);
+}
+.text-theme-secondary {
+	color: var(--text-light);
+}
+.hover-bg-theme-primary-hover:hover {
+	background-color: var(--primary-hover);
+}
+.bg-theme-primary {
+	background-color: var(--primary);
+}
+.hover\:text-theme-primary:hover {
+	color: var(--primary);
+}
+.hover\:bg-theme-surface:hover {
+	background-color: var(--surface);
+}
+.hover\:bg-theme-primary-hover:hover {
+	background-color: var(--primary-hover);
+}
+
+/* Gradients */
+.bg-sidebar-gradient {
+	background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+}
+.bg-sidebar-gradient-diagonal {
+	background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+}
+.bg-footer-gradient {
+	background: linear-gradient(to right, var(--surface), var(--primary-light));
+}
+.bg-surface-gradient {
+	background: linear-gradient(135deg, var(--surface), var(--surface-elevated));
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--text-lighter);
+}
+
+/* Text Selection */
+::selection {
+	background-color: var(--primary-light);
+	color: var(--text);
+}
+
+/* Focus Styles */
+:focus-visible {
+	outline: 2px solid var(--focus);
+	outline-offset: 2px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
 }

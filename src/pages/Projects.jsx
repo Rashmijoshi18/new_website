@@ -34,7 +34,7 @@ const projects = [
 
 export default function Projects() {
 	return (
-		<section className="bg-white pt-12 pb-20 px-4 relative overflow-hidden">
+		<section className="pt-12 pb-20 px-4 relative overflow-hidden">
 			{/* Background Elements */}
 			<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
 				<div className="absolute -top-40 -right-40 w-80 h-80 bg-white rounded-full mix-blend-multiply opacity-40"></div>
