@@ -62,14 +62,7 @@ console.log('Welcome to my digital world! 🚀');`;
 
 				{/* CTA Buttons */}
 				<div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
-					{/* <Link
-						to="/projects"
-						className="btn-primary group px-8 py-3 bg-primary text-white rounded-xl font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover-bg-primary-hover"
-					>
-						View My Work
-						<i className="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-					</Link> */}
-					<a
+					{/* <a
 						href={My_resume}
 						download
 						target="_blank"
@@ -77,7 +70,16 @@ console.log('Welcome to my digital world! 🚀');`;
 						className="btn-primary group px-8 py-3 bg-green-700 text-white rounded-xl font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
 					>
 						Resume
+					</a> */}
+					<a
+						href={My_resume}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="btn-primary group px-8 py-3 bg-green-700 text-white rounded-xl font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
+					>
+						Resume
 					</a>
+
 					<Link
 						to="/contact"
 						className="px-8 py-3 border-2 border-primary text-primary rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300"
