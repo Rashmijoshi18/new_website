@@ -17,7 +17,7 @@ export default function App() {
 			{/* Main content wrapper */}
 			<div className="flex-1 flex flex-col">
 				{/* Main content */}
-				<main className="flex-1 px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
+				<main className="flex-1">
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/about" element={<About />} />

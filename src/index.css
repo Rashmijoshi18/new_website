@@ -10,6 +10,7 @@
 	--primary-hover: rgb(22, 101, 52); /* Green-700 */
 	--primary-light: rgb(240, 253, 244); /* Green-50 */
 	--primary-soft: rgb(74, 222, 128); /* Green-400 */
+	--primary-bright: rgb(34, 139, 34); /* Same as primary in light mode */
 
 	/* Background Colors */
 	--background: rgb(255, 255, 255); /* White */
@@ -52,10 +53,11 @@
 /* Dark Mode */
 .dark {
 	/* Primary Colors (Green) */
-	--primary: rgb(34, 139, 34); /* Green-600 */
+	--primary: rgb(22, 163, 74); /* Green-550 */
 	--primary-hover: rgb(22, 101, 52); /* Green-700 */
 	--primary-light: rgb(20, 83, 45); /* Dark Green-900 */
 	--primary-soft: rgb(74, 222, 128); /* Green-400 */
+	--primary-bright: rgb(74, 222, 128); /* Bright green for dark mode */
 
 	/* Background Colors */
 	--background: rgb(17, 24, 39); /* Gray-900 */
@@ -213,6 +215,9 @@ body {
 .border-primary-hover {
 	border-color: var(--primary-hover);
 }
+.border-primary-soft {
+	border-color: var(--primary-soft);
+}
 .border-code {
 	border-color: var(--code-border);
 }
@@ -223,6 +228,9 @@ body {
 }
 .hover-bg-primary-hover:hover {
 	background-color: var(--primary-hover);
+}
+.hover-bg-primary-soft:hover {
+	background-color: var(--primary-soft);
 }
 .hover-bg-surface-hover:hover {
 	background-color: var(--surface-hover);
@@ -307,34 +315,26 @@ body {
 	background: linear-gradient(135deg, var(--surface), var(--surface-elevated));
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-	width: 8px;
-}
-
-::-webkit-scrollbar-track {
-	background: var(--surface);
-}
-
-::-webkit-scrollbar-thumb {
-	background: var(--border);
-	border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: var(--text-lighter);
-}
-
-/* Text Selection */
-::selection {
-	background-color: var(--primary-light);
-	color: var(--text);
-}
-
 /* Focus Styles */
 :focus-visible {
 	outline: 2px solid var(--focus);
-	outline-offset: 2px;
+}
+
+/* Simple Bright Color Classes - Auto Dark Mode */
+.text-primary-bright {
+	color: var(--primary-bright);
+}
+.border-primary-bright {
+	border-color: var(--primary-bright);
+}
+.bg-primary-bright {
+	background-color: var(--primary-bright);
+}
+.hover\:border-primary-bright:hover {
+	border-color: var(--primary-bright);
+}
+.hover\:bg-primary-bright:hover {
+	background-color: var(--primary-bright);
 }
 
 /* Accessibility */

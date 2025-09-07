@@ -147,25 +147,25 @@ const SimpleSkillsPage = () => {
 	];
 
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
 				{/* Heading */}
 				<div className="text-center mb-8">
-					<h2 className="text-3xl lg:text-4xl font-bold text-green-700 mb-2">Professional Profile</h2>
-					<p className="text-gray-600">Technical skills, soft skills, and achievements</p>
+					<h2 className="text-3xl lg:text-4xl font-bold text-primary-bright mb-2">Professional Profile</h2>
+					<p className="text-light dark:text-light">Technical skills, soft skills, and achievements</p>
 				</div>
 
 				{/* Navigation */}
 				<div className="flex justify-center mb-8">
-					<div className="flex flex-col sm:flex-row bg-white rounded-lg shadow-sm border border-green-900 overflow-hidden">
+					<div className="flex flex-col sm:flex-row bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main overflow-hidden">
 						{["skills", "soft-skills", "achievements"].map((tab) => (
 							<button
 								key={tab}
 								onClick={() => setActiveTab(tab)}
 								className={`px-6 py-3 font-medium transition-all duration-300 text-sm sm:text-base ${
 									activeTab === tab
-										? "bg-green-700 text-white shadow-md"
-										: "text-gray-600 hover:text-green-700 hover:bg-green-50"
+										? "bg-primary text-white shadow-md"
+										: "text-light dark:text-light hover:text-primary-bright hover:bg-surface-elevated dark:hover:bg-surface-elevated"
 								}`}
 							>
 								{tab === "skills"
@@ -180,8 +180,8 @@ const SimpleSkillsPage = () => {
 
 				{/* Technical Skills */}
 				{activeTab === "skills" && (
-					<div className="bg-white rounded-lg shadow-sm border border-[#101d13] animate-slide-up">
-						<div className="bg-green-700 text-white px-6 py-4 rounded-t-lg">
+					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
+						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
 							<h3 className="text-xl font-bold">Technical Skills</h3>
 						</div>
 						<div className="p-6">
@@ -191,9 +191,9 @@ const SimpleSkillsPage = () => {
 									className="flex items-center justify-between py-3 px-3 rounded-lg transition-all duration-300 custom-hover"
 								>
 									<div className="flex items-center space-x-3 group">
-										<div className="w-2 h-2 bg-green-700 rounded-full transition-transform duration-300 group-hover:scale-150"></div>
-										<span className="text-gray-800 font-medium">{skill.name}</span>
-										<span className="text-gray-500 text-sm">({skill.category})</span>
+										<div className="w-2 h-2 bg-primary-bright rounded-full transition-transform duration-300 group-hover:scale-150"></div>
+										<span className="text-main dark:text-main font-medium">{skill.name}</span>
+										<span className="text-light dark:text-light text-sm">({skill.category})</span>
 									</div>
 								</div>
 							))}
@@ -203,22 +203,24 @@ const SimpleSkillsPage = () => {
 
 				{/* Soft Skills */}
 				{activeTab === "soft-skills" && (
-					<div className="bg-white rounded-lg shadow-sm border border-green-700 animate-slide-up">
-						<div className="bg-green-700 text-white px-6 py-4 rounded-t-lg">
+					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
+						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
 							<h3 className="text-xl font-bold">Soft Skills</h3>
 						</div>
 						<div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 							{softSkills.map((skill, index) => (
 								<div
 									key={index}
-									className="rounded-lg p-5 bg-white shadow-sm border border-gray-100 transition-all duration-300 custom-hover"
+									className="rounded-lg p-5 bg-surface-elevated dark:bg-surface-elevated shadow-sm border border-main dark:border-main transition-all duration-300 custom-hover"
 								>
 									<div className="flex justify-center mb-3">
-										<div className="p-3 bg-green-100 text-green-700 rounded-full">{skill.icon}</div>
+										<div className="p-3 bg-primary-light dark:bg-primary-light text-primary-bright rounded-full">
+											{skill.icon}
+										</div>
 									</div>
 									<div className="text-center">
-										<h4 className="font-semibold text-gray-800 mb-2">{skill.name}</h4>
-										<p className="text-gray-600 text-sm">{skill.description}</p>
+										<h4 className="font-semibold text-main dark:text-main mb-2">{skill.name}</h4>
+										<p className="text-light dark:text-light text-sm">{skill.description}</p>
 									</div>
 								</div>
 							))}
@@ -228,22 +230,24 @@ const SimpleSkillsPage = () => {
 
 				{/* Achievements */}
 				{activeTab === "achievements" && (
-					<div className="bg-white rounded-lg shadow-sm border border-green-900 animate-slide-up">
-						<div className="bg-green-700 text-white px-6 py-4 rounded-t-lg">
+					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
+						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
 							<h3 className="text-xl font-bold">Achievements</h3>
 						</div>
 						<div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
 							{achievements.map((ach, index) => (
 								<div
 									key={index}
-									className="rounded-lg p-5 bg-white shadow-sm border border-gray-100 transition-all duration-300 custom-hover"
+									className="rounded-lg p-5 bg-surface-elevated dark:bg-surface-elevated shadow-sm border border-main dark:border-main transition-all duration-300 custom-hover"
 								>
 									<div className="flex items-start space-x-4">
-										<div className="p-3 bg-green-100 text-green-700 rounded-lg">{ach.icon}</div>
+										<div className="p-3 bg-primary-light dark:bg-primary-light text-primary-bright rounded-lg">
+											{ach.icon}
+										</div>
 										<div className="flex-1">
-											<h3 className="font-semibold text-gray-800 mb-1">{ach.title}</h3>
-											<p className="text-gray-600 text-sm">{ach.issuer}</p>
-											<p className="text-green-700 text-sm font-medium">{ach.date}</p>
+											<h3 className="font-semibold text-main dark:text-main mb-1">{ach.title}</h3>
+											<p className="text-light dark:text-light text-sm">{ach.issuer}</p>
+											<p className="text-primary-bright text-sm font-medium">{ach.date}</p>
 										</div>
 									</div>
 								</div>
