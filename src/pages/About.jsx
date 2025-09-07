@@ -141,7 +141,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 			<div className="max-w-5xl mx-auto">
 				{/* Header */}
 				<div className="text-center mb-10">
-					<div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 shadow-md border-2 border-primary-hover dark:border-primary-hover">
+					<div className="w-38 h-38 rounded-full overflow-hidden mx-auto mb-4 shadow-md border-2 border-primary-hover dark:border-primary-hover">
 						<img src={profileImage} alt="Rashmi Joshi" className="w-full h-full object-cover" />
 					</div>
 
