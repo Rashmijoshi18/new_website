@@ -137,8 +137,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 	];
 
 	return (
-		<div className="min-h-screen py-8 px-4 mb-10 bg-background dark:bg-background">
-			<div className="max-w-5xl mx-auto">
+		<div className="min-h-screen px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
+			<div className="max-w-5xl mx-auto py-8 px-4 mb-10">
 				{/* Header */}
 				<div className="text-center mb-10">
 					<div className="w-38 h-38 rounded-full overflow-hidden mx-auto mb-4 shadow-md border-2 border-primary-hover dark:border-primary-hover">
