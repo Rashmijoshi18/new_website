@@ -62,17 +62,9 @@ console.log('Welcome to my digital world! 🚀');`;
 
 				{/* CTA Buttons */}
 				<div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center pt-2">
-					{/* <a
-						href={My_resume}
-						download
-						target="_blank"
-						rel="noopener noreferrer"
-						className="btn-primary group px-8 py-3 bg-green-700 text-white rounded-xl font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
-					>
-						Resume
-					</a> */}
 					<a
 						href={My_resume}
+						download
 						target="_blank"
 						rel="noopener noreferrer"
 						className="btn-primary group px-8 py-3 bg-green-700 text-white rounded-xl font-semibold shadow-lg flex items-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg"
