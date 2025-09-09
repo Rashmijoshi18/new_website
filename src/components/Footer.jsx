@@ -48,7 +48,7 @@ export default function Footer() {
 			{/* Bottom Status Row (like sidebar footer) */}
 			<div className="px-6 lg:px-12 pb-4">
 				<div className="flex items-center justify-center gap-2">
-					<div className="w-2 h-2 bg-[#308D46] rounded-full animate-pulse"></div>
+					<div className="w-2 h-2 bg-slate-300 rounded-full animate-pulse"></div>
 					<p className="text-xs text-gray-600 dark:text-gray-400">Ready to code</p>
 				</div>
 			</div>
