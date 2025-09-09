@@ -4,8 +4,9 @@ export function getSavedTheme() {
 		if (t === "dark" || t === "light") return t;
 	} catch {
 		// Ignore localStorage errors
+		console.log("Error getting saved theme");
 	}
-	if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+	// if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
 	return "light";
 }
 
