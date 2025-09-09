@@ -8,7 +8,7 @@ export default function Footer() {
 				{/* Left Section */}
 				<div className="flex items-center mb-3 md:mb-0 text-center md:text-left">
 					<p>
-						© {new Date().getFullYear()} <span className="font-semibold text-[#308D46]">Rashmi Joshi</span>.
+						© {new Date().getFullYear()} <span className="font-semibold text-white">Rashmi Joshi</span>.
 						<span className="ml-1">All rights reserved.</span>
 					</p>
 				</div>
