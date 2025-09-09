@@ -8,7 +8,7 @@ export default function Footer() {
 				{/* Left Section */}
 				<div className="flex items-center mb-3 md:mb-0 text-center md:text-left">
 					<p>
-						© {new Date().getFullYear()} <span className="font-semibold text-white">Rashmi Joshi</span>.
+						© {new Date().getFullYear()} <span className="font-semibold text-gray-500">Rashmi Joshi</span>.
 						<span className="ml-1">All rights reserved.</span>
 					</p>
 				</div>
@@ -19,7 +19,7 @@ export default function Footer() {
 						href="https://github.com/Rashmijoshi18"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[#308D46] transition-all"
+						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-500 transition-all"
 					>
 						<Github className="w-4 h-4" />
 						<span className="hidden sm:inline font-medium">GitHub</span>
@@ -28,7 +28,7 @@ export default function Footer() {
 						href="https://linkedin.com/"
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[#308D46] transition-all"
+						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-500 transition-all"
 					>
 						<Linkedin className="w-4 h-4" />
 						<span className="hidden sm:inline font-medium">LinkedIn</span>
@@ -37,7 +37,7 @@ export default function Footer() {
 						href="https://mail.google.com/mail/?view=cm&fs=1&to=rashmijoshi3699@gmail.com&su=Hello%20Rashmi&body=I%20would%20like%20to%20connect%20with%20you."
 						target="_blank"
 						rel="noopener noreferrer"
-						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-[#308D46] transition-all"
+						className="flex items-center gap-2 text-gray-700 dark:text-gray-300 hover:text-gray-500 transition-all"
 					>
 						<Mail className="w-4 h-4" />
 						<span className="hidden sm:inline font-medium">Email</span>
