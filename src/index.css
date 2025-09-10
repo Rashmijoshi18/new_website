@@ -1,98 +1,91 @@
 @import "tailwindcss";
 
-/* Dark mode variant configuration for Tailwind CSS */
-@custom-variant dark (&:where(.dark, .dark *));
-
-/* Complete Simple Color System - All Colors You Need */
+/* Dark GitHub-inspired Color System */
 :root {
-	/* Primary Colors (Green) */
-	--primary: rgb(34, 139, 34); /* Green-600 */
-	--primary-hover: rgb(22, 101, 52); /* Green-700 */
-	--primary-light: rgb(240, 253, 244); /* Green-50 */
-	--primary-soft: rgb(74, 222, 128); /* Green-400 */
-	--primary-bright: rgb(34, 139, 34); /* Same as primary in light mode */
+	/* GitHub Dark Theme Colors - Light Mode (for contrast/accessibility) */
+	--primary: rgb(35, 134, 54); /* GitHub Green */
+	--primary-hover: rgb(46, 160, 67); /* Lighter GitHub Green */
+	--primary-light: rgb(240, 253, 244); /* Very Light Green */
+	--primary-soft: rgb(63, 185, 80); /* Medium GitHub Green */
+	--primary-bright: rgb(35, 134, 54);
 
-	/* Background Colors */
+	/* Light Mode Backgrounds */
 	--background: rgb(255, 255, 255); /* White */
-	--surface: rgb(249, 250, 251); /* Gray-50 */
-	--surface-elevated: rgb(243, 244, 246); /* Gray-100 */
-	--surface-hover: rgb(243, 244, 246); /* Gray-100 */
+	--surface: rgb(246, 248, 250); /* GitHub Light Gray */
+	--surface-elevated: rgb(255, 255, 255); /* White */
+	--surface-hover: rgb(246, 248, 250); /* Light Hover */
 
-	/* Text Colors */
-	--text: rgb(17, 24, 39); /* Gray-900 */
-	--text-light: rgb(75, 85, 99); /* Gray-600 */
-	--text-lighter: rgb(107, 114, 128); /* Gray-500 */
-	--text-subtle: rgb(156, 163, 175); /* Gray-400 */
+	/* Light Mode Text */
+	--text: rgb(36, 41, 47); /* GitHub Dark Text */
+	--text-light: rgb(87, 96, 106); /* GitHub Muted Text */
+	--text-lighter: rgb(101, 109, 118); /* GitHub Light Muted */
+	--text-subtle: rgb(139, 148, 158); /* GitHub Subtle */
 
-	/* Border Colors */
-	--border: rgb(229, 231, 235); /* Gray-200 */
-	--border-subtle: rgb(243, 244, 246); /* Gray-100 */
+	/* Light Mode Borders */
+	--border: rgb(208, 215, 222); /* GitHub Light Border */
+	--border-subtle: rgb(234, 238, 242); /* GitHub Subtle Border */
 
-	/* Code Block Colors */
-	--code-bg: rgb(17, 24, 39); /* Gray-900 */
-	--code-header: rgb(31, 41, 55); /* Gray-800 */
-	--code-text: rgb(209, 213, 219); /* Gray-300 */
-	--code-border: rgb(75, 85, 99); /* Gray-600 */
-
-	/* Badge Colors */
-	--badge-bg: rgb(243, 244, 246); /* Gray-100 */
-	--badge-text: rgb(55, 65, 81); /* Gray-700 */
+	/* Code Blocks - Always Dark */
+	--code-bg: rgb(13, 17, 23); /* GitHub Dark BG */
+	--code-header: rgb(22, 27, 34); /* GitHub Dark Secondary */
+	--code-text: rgb(230, 237, 243); /* GitHub Dark Text */
+	--code-border: rgb(48, 54, 61); /* GitHub Dark Border */
 
 	/* Status Colors */
-	--success: rgb(34, 197, 94); /* Green-500 */
-	--success-light: rgb(240, 253, 244); /* Green-50 */
-	--warning: rgb(245, 158, 11); /* Yellow-500 */
-	--error: rgb(239, 68, 68); /* Red-500 */
+	--success: rgb(35, 134, 54); /* GitHub Green */
+	--success-light: rgb(240, 253, 244);
+	--warning: rgb(251, 188, 5); /* GitHub Yellow */
+	--error: rgb(218, 54, 51); /* GitHub Red */
 
-	/* Special Colors */
+	/* Special */
 	--white: rgb(255, 255, 255);
 	--black: rgb(0, 0, 0);
-	--focus: rgb(34, 139, 34); /* Same as primary */
+	--focus: rgb(35, 134, 54);
 }
 
-/* Dark Mode */
+/* Dark Mode - GitHub Dark Theme */
 .dark {
-	/* Primary Colors (Green) */
-	--primary: rgb(22, 163, 74); /* Green-550 */
-	--primary-hover: rgb(22, 101, 52); /* Green-700 */
-	--primary-light: rgb(20, 83, 45); /* Dark Green-900 */
-	--primary-soft: rgb(74, 222, 128); /* Green-400 */
-	--primary-bright: rgb(74, 222, 128); /* Bright green for dark mode */
+	/* Primary Colors - GitHub Green System */
+	--primary: rgb(35, 134, 54); /* GitHub Green */
+	--primary-hover: rgb(46, 160, 67); /* GitHub Green Hover */
+	--primary-light: rgb(13, 27, 15); /* Dark Green Tint */
+	--primary-soft: rgb(63, 185, 80); /* Bright GitHub Green */
+	--primary-bright: rgb(63, 185, 80); /* Bright for dark mode */
 
-	/* Background Colors */
-	--background: rgb(17, 24, 39); /* Gray-900 */
-	--surface: rgb(31, 41, 55); /* Gray-800 */
-	--surface-elevated: rgb(55, 65, 81); /* Gray-700 */
-	--surface-hover: rgb(55, 65, 81); /* Gray-700 */
+	/* GitHub Dark Backgrounds */
+	--background: rgb(13, 17, 23); /* GitHub Dark Primary */
+	--surface: rgb(22, 27, 34); /* GitHub Dark Secondary */
+	--surface-elevated: rgb(33, 38, 45); /* GitHub Dark Tertiary */
+	--surface-hover: rgb(33, 38, 45); /* GitHub Dark Hover */
 
-	/* Text Colors */
-	--text: rgb(249, 250, 251); /* Gray-50 */
-	--text-light: rgb(209, 213, 219); /* Gray-300 */
-	--text-lighter: rgb(107, 114, 128); /* Gray-500 */
-	--text-subtle: rgb(156, 163, 175); /* Gray-400 */
+	/* GitHub Dark Text Colors */
+	--text: rgb(230, 237, 243); /* GitHub Dark Primary Text */
+	--text-light: rgb(125, 133, 144); /* GitHub Dark Secondary Text */
+	--text-lighter: rgb(101, 109, 118); /* GitHub Dark Tertiary Text */
+	--text-subtle: rgb(87, 96, 106); /* GitHub Dark Muted Text */
 
-	/* Border Colors */
-	--border: rgb(75, 85, 99); /* Gray-600 */
-	--border-subtle: rgb(55, 65, 81); /* Gray-700 */
+	/* GitHub Dark Borders */
+	--border: rgb(48, 54, 61); /* GitHub Dark Border */
+	--border-subtle: rgb(33, 38, 45); /* GitHub Dark Subtle Border */
 
-	/* Code Block Colors */
-	--code-bg: rgb(0, 0, 0); /* Pure Black */
-	--code-header: rgb(17, 24, 39); /* Gray-900 */
-	--code-text: rgb(229, 231, 235); /* Gray-200 */
-	--code-border: rgb(107, 114, 128); /* Gray-500 */
+	/* Code Blocks - Even Darker */
+	--code-bg: rgb(6, 8, 12); /* Almost Black */
+	--code-header: rgb(13, 17, 23); /* GitHub Dark Primary */
+	--code-text: rgb(230, 237, 243); /* GitHub Light Text */
+	--code-border: rgb(48, 54, 61); /* GitHub Dark Border */
 
-	/* Badge Colors */
-	--badge-bg: rgb(55, 65, 81); /* Gray-700 */
-	--badge-text: rgb(209, 213, 219); /* Gray-300 */
+	/* Badge Colors - GitHub Dark */
+	--badge-bg: rgb(33, 38, 45); /* GitHub Dark Tertiary */
+	--badge-text: rgb(230, 237, 243); /* GitHub Light Text */
 
-	/* Status Colors */
-	--success: rgb(74, 222, 128); /* Green-400 */
-	--success-light: rgb(20, 83, 45); /* Dark Green-900 */
-	--warning: rgb(251, 191, 36); /* Yellow-400 */
-	--error: rgb(248, 113, 113); /* Red-400 */
+	/* Status Colors - GitHub Dark Adjusted */
+	--success: rgb(63, 185, 80); /* Bright GitHub Green */
+	--success-light: rgb(13, 27, 15); /* Dark Green Background */
+	--warning: rgb(251, 188, 5); /* GitHub Yellow */
+	--error: rgb(248, 81, 73); /* GitHub Red Light */
 
 	/* Focus */
-	--focus: rgb(74, 222, 128); /* Green-400 */
+	--focus: rgb(63, 185, 80);
 }
 
 /* Base Styles */
@@ -100,248 +93,239 @@ body {
 	background-color: var(--background);
 	color: var(--text);
 	transition: background-color 0.3s ease, color 0.3s ease;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
 }
 
-/* Simple Utility Classes - All Colors */
+/* Background Color Classes */
+.bg-primary { background-color: var(--primary); }
+.bg-primary-hover { background-color: var(--primary-hover); }
+.bg-primary-light { background-color: var(--primary-light); }
+.bg-primary-soft { background-color: var(--primary-soft); }
+.bg-primary-bright { background-color: var(--primary-bright); }
 
-/* Background Colors */
-.bg-primary {
-	background-color: var(--primary);
-}
-.bg-primary-hover {
-	background-color: var(--primary-hover);
-}
-.bg-primary-light {
-	background-color: var(--primary-light);
-}
-.bg-primary-soft {
-	background-color: var(--primary-soft);
-}
-.bg-background {
-	background-color: var(--background);
-}
-.bg-surface {
-	background-color: var(--surface);
-}
-.bg-surface-elevated {
-	background-color: var(--surface-elevated);
-}
-.bg-surface-hover {
-	background-color: var(--surface-hover);
-}
-.bg-code {
-	background-color: var(--code-bg);
-}
-.bg-code-header {
-	background-color: var(--code-header);
-}
-.bg-badge {
-	background-color: var(--badge-bg);
-}
-.bg-success {
-	background-color: var(--success);
-}
-.bg-success-light {
-	background-color: var(--success-light);
-}
-.bg-warning {
-	background-color: var(--warning);
-}
-.bg-error {
-	background-color: var(--error);
-}
-.bg-white {
-	background-color: var(--white);
-}
-.bg-black {
-	background-color: var(--black);
-}
+.bg-background { background-color: var(--background); }
+.bg-surface { background-color: var(--surface); }
+.bg-surface-elevated { background-color: var(--surface-elevated); }
+.bg-surface-hover { background-color: var(--surface-hover); }
 
-/* Text Colors */
-.text-primary {
-	color: var(--primary);
-}
-.text-primary-hover {
-	color: var(--primary-hover);
-}
-.text-primary-soft {
-	color: var(--primary-soft);
-}
-.text-main {
-	color: var(--text);
-}
-.text-light {
-	color: var(--text-light);
-}
-.text-lighter {
-	color: var(--text-lighter);
-}
-.text-subtle {
-	color: var(--text-subtle);
-}
-.text-code {
-	color: var(--code-text);
-}
-.text-badge {
-	color: var(--badge-text);
-}
-.text-success {
-	color: var(--success);
-}
-.text-warning {
-	color: var(--warning);
-}
-.text-error {
-	color: var(--error);
-}
-.text-white {
-	color: var(--white);
-}
-.text-black {
-	color: var(--black);
-}
+.bg-code { background-color: var(--code-bg); }
+.bg-code-header { background-color: var(--code-header); }
+.bg-badge { background-color: var(--badge-bg); }
 
-/* Border Colors */
-.border-main {
-	border-color: var(--border);
-}
-.border-subtle {
-	border-color: var(--border-subtle);
-}
-.border-primary {
-	border-color: var(--primary);
-}
-.border-primary-hover {
-	border-color: var(--primary-hover);
-}
-.border-primary-soft {
-	border-color: var(--primary-soft);
-}
-.border-code {
-	border-color: var(--code-border);
-}
+.bg-success { background-color: var(--success); }
+.bg-success-light { background-color: var(--success-light); }
+.bg-warning { background-color: var(--warning); }
+.bg-error { background-color: var(--error); }
+
+.bg-white { background-color: var(--white); }
+.bg-black { background-color: var(--black); }
+
+/* Text Color Classes */
+.text-primary { color: var(--primary); }
+.text-primary-hover { color: var(--primary-hover); }
+.text-primary-soft { color: var(--primary-soft); }
+.text-primary-bright { color: var(--primary-bright); }
+
+.text-main { color: var(--text); }
+.text-light { color: var(--text-light); }
+.text-lighter { color: var(--text-lighter); }
+.text-subtle { color: var(--text-subtle); }
+
+.text-code { color: var(--code-text); }
+.text-badge { color: var(--badge-text); }
+
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-error { color: var(--error); }
+
+.text-white { color: var(--white); }
+.text-black { color: var(--black); }
+
+/* Border Color Classes */
+.border-main { border-color: var(--border); }
+.border-subtle { border-color: var(--border-subtle); }
+.border-primary { border-color: var(--primary); }
+.border-primary-hover { border-color: var(--primary-hover); }
+.border-primary-soft { border-color: var(--primary-soft); }
+.border-primary-bright { border-color: var(--primary-bright); }
+.border-code { border-color: var(--code-border); }
 
 /* Hover States */
-.hover-bg-primary:hover {
+.hover-bg-primary:hover { background-color: var(--primary); }
+.hover-bg-primary-hover:hover { background-color: var(--primary-hover); }
+.hover-bg-primary-soft:hover { background-color: var(--primary-soft); }
+.hover-bg-primary-bright:hover { background-color: var(--primary-bright); }
+.hover-bg-surface-hover:hover { background-color: var(--surface-hover); }
+
+.hover-text-primary:hover { color: var(--primary); }
+.hover-text-primary-bright:hover { color: var(--primary-bright); }
+.hover-text-main:hover { color: var(--text); }
+
+.hover-border-primary-bright:hover { border-color: var(--primary-bright); }
+
+/* GitHub-specific Component Styles */
+.github-card {
+	background-color: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 1rem;
+	transition: border-color 0.2s ease;
+}
+
+.github-card:hover {
+	border-color: var(--border-subtle);
+}
+
+.github-button {
 	background-color: var(--primary);
+	color: var(--white);
+	border: 1px solid var(--primary);
+	border-radius: 6px;
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	cursor: pointer;
 }
-.hover-bg-primary-hover:hover {
+
+.github-button:hover {
 	background-color: var(--primary-hover);
+	border-color: var(--primary-hover);
 }
-.hover-bg-primary-soft:hover {
-	background-color: var(--primary-soft);
-}
-.hover-bg-surface-hover:hover {
-	background-color: var(--surface-hover);
-}
-.hover-text-primary:hover {
-	color: var(--primary);
-}
-.hover-text-main:hover {
+
+.github-button-secondary {
+	background-color: var(--surface-elevated);
 	color: var(--text);
+	border: 1px solid var(--border);
+	border-radius: 6px;
+	padding: 0.5rem 1rem;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	cursor: pointer;
 }
 
-/* Legacy class names for backward compatibility - DO NOT REMOVE */
-.text-theme-success {
-	color: var(--success);
-}
-.bg-theme-badge {
-	background-color: var(--badge-bg);
-}
-.text-theme-badge {
-	color: var(--badge-text);
-}
-.text-theme-sidebar-accent {
-	color: var(--primary);
-}
-.bg-theme-background {
-	background-color: var(--background);
-}
-.border-theme-primary {
-	border-color: var(--primary);
-}
-.text-theme-primary {
-	color: var(--primary);
-}
-.text-theme-brand {
-	color: var(--primary);
-}
-.hover-bg-theme-surface-hover:hover {
+.github-button-secondary:hover {
 	background-color: var(--surface-hover);
-}
-.bg-theme-sidebar-accent {
-	background-color: var(--primary);
-}
-.text-theme-subtle {
-	color: var(--text-subtle);
-}
-.bg-theme-surface {
-	background-color: var(--surface);
-}
-.border-theme {
-	border-color: var(--border);
-}
-.text-theme-secondary {
-	color: var(--text-light);
-}
-.hover-bg-theme-primary-hover:hover {
-	background-color: var(--primary-hover);
-}
-.bg-theme-primary {
-	background-color: var(--primary);
-}
-.hover\:text-theme-primary:hover {
-	color: var(--primary);
-}
-.hover\:bg-theme-surface:hover {
-	background-color: var(--surface);
-}
-.hover\:bg-theme-primary-hover:hover {
-	background-color: var(--primary-hover);
+	border-color: var(--border-subtle);
 }
 
-/* Gradients */
+/* Code Syntax Highlighting - GitHub Dark */
+.syntax-keyword { color: rgb(255, 123, 114); } /* GitHub Red */
+.syntax-string { color: rgb(165, 214, 255); } /* GitHub Blue */
+.syntax-comment { color: rgb(139, 148, 158); } /* GitHub Gray */
+.syntax-function { color: rgb(210, 168, 255); } /* GitHub Purple */
+.syntax-number { color: rgb(121, 192, 255); } /* GitHub Light Blue */
+.syntax-variable { color: rgb(255, 166, 87); } /* GitHub Orange */
+
+/* Legacy Classes for Backward Compatibility */
+.text-theme-success { color: var(--success); }
+.bg-theme-badge { background-color: var(--badge-bg); }
+.text-theme-badge { color: var(--badge-text); }
+.text-theme-sidebar-accent { color: var(--primary); }
+.bg-theme-background { background-color: var(--background); }
+.border-theme-primary { border-color: var(--primary); }
+.text-theme-primary { color: var(--primary); }
+.text-theme-brand { color: var(--primary); }
+.hover-bg-theme-surface-hover:hover { background-color: var(--surface-hover); }
+.bg-theme-sidebar-accent { background-color: var(--primary); }
+.text-theme-subtle { color: var(--text-subtle); }
+.bg-theme-surface { background-color: var(--surface); }
+.border-theme { border-color: var(--border); }
+.text-theme-secondary { color: var(--text-light); }
+.hover-bg-theme-primary-hover:hover { background-color: var(--primary-hover); }
+.bg-theme-primary { background-color: var(--primary); }
+.hover\:text-theme-primary:hover { color: var(--primary); }
+.hover\:bg-theme-surface:hover { background-color: var(--surface); }
+.hover\:bg-theme-primary-hover:hover { background-color: var(--primary-hover); }
+
+/* Gradients - GitHub Inspired */
 .bg-sidebar-gradient {
-	background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+	background: linear-gradient(135deg, var(--surface), var(--surface-elevated));
 }
+
 .bg-sidebar-gradient-diagonal {
 	background: linear-gradient(135deg, var(--primary-hover), var(--primary));
 }
+
 .bg-footer-gradient {
-	background: linear-gradient(to right, var(--surface), var(--primary-light));
+	background: linear-gradient(to right, var(--surface), var(--surface-elevated));
 }
+
 .bg-surface-gradient {
 	background: linear-gradient(135deg, var(--surface), var(--surface-elevated));
 }
 
-/* Focus Styles */
+.bg-hero-gradient {
+	background: linear-gradient(135deg, var(--background) 0%, var(--surface) 100%);
+}
+
+/* Focus and Accessibility */
 :focus-visible {
 	outline: 2px solid var(--focus);
+	outline-offset: 2px;
 }
 
-/* Simple Bright Color Classes - Auto Dark Mode */
-.text-primary-bright {
-	color: var(--primary-bright);
-}
-.border-primary-bright {
-	border-color: var(--primary-bright);
-}
-.bg-primary-bright {
-	background-color: var(--primary-bright);
-}
-.hover\:border-primary-bright:hover {
-	border-color: var(--primary-bright);
-}
-.hover\:bg-primary-bright:hover {
-	background-color: var(--primary-bright);
+/* Dark Mode Toggle Utilities */
+.dark-toggle {
+	background-color: var(--surface-elevated);
+	border: 1px solid var(--border);
+	color: var(--text);
+	border-radius: 6px;
+	padding: 0.5rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
 }
 
-/* Accessibility */
+.dark-toggle:hover {
+	background-color: var(--surface-hover);
+}
+
+/* Scrollbar Styling for Dark Mode */
+.dark ::-webkit-scrollbar {
+	width: 12px;
+}
+
+.dark ::-webkit-scrollbar-track {
+	background: var(--background);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+	background: var(--border);
+	border-radius: 6px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+	background: var(--text-subtle);
+}
+
+/* Selection Styling */
+::selection {
+	background-color: var(--primary-light);
+	color: var(--text);
+}
+
+.dark ::selection {
+	background-color: var(--primary);
+	color: var(--white);
+}
+
+/* Accessibility - Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
 	* {
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
+	}
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+	:root {
+		--border: rgb(0, 0, 0);
+		--text-subtle: rgb(0, 0, 0);
+	}
+	
+	.dark {
+		--border: rgb(255, 255, 255);
+		--text-subtle: rgb(255, 255, 255);
 	}
 }
