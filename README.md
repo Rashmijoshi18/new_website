@@ -95,42 +95,42 @@ Before running this project, make sure you have:
 
 ```
 new_website/
-├── .gitignore              # Git ignore rules
-├── .eslintrc.cjs          # ESLint configuration
-├── README.md              # Project documentation
-├── index.html             # Main HTML template
-├── package.json           # Project dependencies and scripts
-├── package-lock.json      # Lockfile for exact dependency versions
-├── vite.config.js         # Vite build configuration
-├── public/                # Static assets (served directly)
-├── src/                   # Source code directory
-│   ├── App.jsx           # Main App component
-│   ├── main.jsx          # Application entry point
-│   ├── index.css         # Global styles and CSS reset
-│   ├── assets/           # Static assets (images, icons)
-│   │   ├── me.png        # Profile/personal image
-│   │   └── react.svg     # React logo
-│   ├── components/       # Reusable React components
-│   │   ├── Footer.jsx    # Footer component
-│   │   ├── ProjectCard.jsx # Project card component
-│   │   ├── Sidebar.jsx   # Sidebar navigation component
-│   │   ├── SkillPill.jsx # Skill badge/pill component
-│   │   └── ThemeToggle.jsx # Dark/light theme toggle
-│   ├── data/             # Static data files
-│   │   ├── experience.js # Work experience data
-│   │   ├── projects.js   # Projects data
-│   │   └── skills.js     # Skills data
-│   ├── pages/            # Page components
-│   │   ├── About.jsx     # About page
-│   │   ├── Contact.jsx   # Contact page
-│   │   ├── Experience.jsx # Experience page
-│   │   ├── Home.jsx      # Home/landing page
-│   │   ├── NotFound.jsx  # 404 error page
-│   │   ├── Projects.jsx  # Projects portfolio page
-│   │   └── Skills.jsx    # Skills showcase page
-│   └── utils/            # Utility functions and helpers
-│       ├── theme.js      # Theme management utilities
-└── dist/                 # Built files (generated after npm run build)
+├── .gitignore             
+├── .eslintrc.cjs          
+├── README.md              
+├── index.html             
+├── package.json          
+├── package-lock.json      
+├── vite.config.js        
+├── public/                
+├── src/                   
+│   ├── App.jsx           
+│   ├── main.jsx          
+│   ├── index.css       
+│   ├── assets/           
+│   │   ├── me.png      
+│   │   └── react.svg     
+│   ├── components/      
+│   │   ├── Footer.jsx    
+│   │   ├── ProjectCard.jsx 
+│   │   ├── Sidebar.jsx  
+│   │   ├── SkillPill.jsx 
+│   │   └── ThemeToggle.jsx 
+│   ├── data/            
+│   │   ├── experience.js 
+│   │   ├── projects.js  
+│   │   └── skills.js     
+│   ├── pages/            
+│   │   ├── About.jsx    
+│   │   ├── Contact.jsx   
+│   │   ├── Experience.jsx 
+│   │   ├── Home.jsx      
+│   │   ├── NotFound.jsx  
+│   │   ├── Projects.jsx 
+│   │   └── Skills.jsx   
+│   └── utils/          
+│       ├── theme.js      
+└── dist/                
 
 ```
 
