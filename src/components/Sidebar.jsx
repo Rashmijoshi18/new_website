@@ -107,7 +107,7 @@ const MobileDrawer = ({ isOpen, onClose }) => (
 			}`}
 		>
 			{/* Header */}
-			<div className="bg-sidebar-gradient p-6 text-white">
+			<div className="bg-theme-primary p-6 text-white">
 				<div className="flex items-center gap-4">
 					<ProfileAvatar size="lg" />
 					<div>
@@ -143,7 +143,7 @@ const DesktopSidebar = ({ expanded, onToggle }) => (
 		}`}
 	>
 		{/* Header */}
-		<div className={`bg-sidebar-gradient-diagonal text-white relative overflow-hidden ${expanded ? "p-6" : "p-3"}`}>
+		<div className={`bg-theme-primary text-white relative overflow-hidden ${expanded ? "p-6" : "p-3"}`}>
 			{/* Background Pattern */}
 			<div className="absolute inset-0 opacity-10">
 				<div className="absolute top-0 right-0 w-20 h-20 rounded-full bg-white transform translate-x-8 -translate-y-8" />

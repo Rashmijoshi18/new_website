@@ -163,7 +163,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 								onClick={() => setActiveTab(tab.id)}
 								className={`px-4 py-2 rounded-lg font-medium flex items-center transition-all duration-300 ${
 									isActive
-										? "bg-primary-hover dark:bg-primary-hover text-white dark:text-white shadow-md"
+										? "bg-primary text-white shadow-md" // ✅ Active bg like sidebar
 										: "text-light dark:text-light hover:bg-surface-elevated dark:hover:bg-surface-elevated"
 								}`}
 							>
@@ -180,8 +180,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 					{activeTab === "intro" && (
 						<div>
 							<div className="flex items-center mb-6 pb-3 border-b border-primary-hover dark:border-primary-hover">
-								<div className="w-10 h-10 bg-primary-hover dark:bg-primary-hover rounded-lg flex items-center justify-center mr-3 shadow">
-									<User className="w-5 h-5 text-white dark:text-white" />
+								<div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
+									<User className="w-5 h-5 text-white" />
 								</div>
 								<h2 className="text-2xl font-bold text-main dark:text-main">Introduction</h2>
 							</div>
@@ -201,8 +201,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 								{/* Core strengths */}
 								<HoverCard>
 									<h3 className="text-lg font-bold text-main dark:text-main mb-4 flex items-center">
-										<div className="w-6 h-6 bg-primary-hover dark:bg-primary rounded flex items-center justify-center mr-2">
-											<Star className="w-4 h-4 text-white dark:text-white" />
+										<div className="w-6 h-6 bg-primary rounded flex items-center justify-center mr-2">
+											<Star className="w-4 h-4 text-white" />
 										</div>
 										Core Strengths
 									</h3>
@@ -214,8 +214,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 													key={idx}
 													className="flex items-center transition duration-300 hover:translate-x-1"
 												>
-													<div className="w-6 h-6 bg-primary-hover dark:bg-primary rounded flex items-center justify-center mr-3">
-														<IconComponent className="w-4 h-4 text-white dark:text-white" />
+													<div className="w-6 h-6 bg-primary rounded flex items-center justify-center mr-3">
+														<IconComponent className="w-4 h-4 text-white" />
 													</div>
 													<span className="text-light dark:text-light">{strength.text}</span>
 												</div>
@@ -231,8 +231,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 					{activeTab === "education" && (
 						<div className="animate-fadeIn">
 							<div className="flex items-center mb-6 pb-3 border-b border-primary-hover dark:border-primary-hover">
-								<div className="w-10 h-10 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
-									<GraduationCap className="w-5 h-5 text-white dark:text-white" />
+								<div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
+									<GraduationCap className="w-5 h-5 text-white" />
 								</div>
 								<h2 className="text-2xl font-bold text-main dark:text-main">Education</h2>
 							</div>
@@ -243,27 +243,23 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 										<h3 className="text-xl font-bold text-main dark:text-main mb-3">
 											{edu.degree}
 										</h3>
-
 										<div className="flex flex-col md:flex-row gap-4 mb-3">
-											{/* Institution */}
 											<div className="flex items-center">
-												<div className="w-8 h-8 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mr-2">
-													<BookOpen className="w-4 h-4 text-white dark:text-white" />
+												<div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-2">
+													<BookOpen className="w-4 h-4 text-white" />
 												</div>
 												<span className="text-light dark:text-light font-medium">
 													{edu.institution}
 												</span>
 											</div>
 
-											{/* Location */}
 											<div className="flex items-center">
-												<div className="w-8 h-8 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mr-2">
-													<MapPin className="w-4 h-4 text-white dark:text-white" />
+												<div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-2">
+													<MapPin className="w-4 h-4 text-white" />
 												</div>
 												<span className="text-light dark:text-light">{edu.location}</span>
 											</div>
 										</div>
-
 										<p className="text-light dark:text-light text-sm">{edu.description}</p>
 									</HoverCard>
 								))}
@@ -275,15 +271,15 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 					{activeTab === "philosophy" && (
 						<div className="animate-fadeIn">
 							<div className="flex items-center mb-6 pb-3 border-b border-primary-hover dark:border-primary-hover">
-								<div className="w-10 h-10 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
-									<Lightbulb className="w-5 h-5 text-white dark:text-white" />
+								<div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
+									<Lightbulb className="w-5 h-5 text-white" />
 								</div>
 								<h2 className="text-2xl font-bold text-main dark:text-main">Development Philosophy</h2>
 							</div>
 
 							<p className="text-light dark:text-light leading-relaxed mb-6">
 								I believe in writing{" "}
-								<span className="text-white dark:text-white bg-primary-hover dark:bg-primary px-2 py-1 rounded font-semibold">
+								<span className="text-white bg-primary px-2 py-1 rounded font-semibold">
 									clean and maintainable code
 								</span>
 								. Every function should be purposeful, every variable meaningful, and every feature
@@ -295,8 +291,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 									const IconComponent = principle.icon;
 									return (
 										<HoverCard key={idx}>
-											<div className="w-10 h-10 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mb-3">
-												<IconComponent className="w-5 h-5 text-white dark:text-white" />
+											<div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mb-3">
+												<IconComponent className="w-5 h-5 text-white" />
 											</div>
 											<h4 className="font-bold text-main dark:text-main mb-2">
 												{principle.title}
@@ -315,8 +311,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 					{activeTab === "approach" && (
 						<div className="animate-fadeIn">
 							<div className="flex items-center mb-6 pb-3 border-b border-primary-hover dark:border-primary-hover">
-								<div className="w-10 h-10 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
-									<Code className="w-5 h-5 text-white dark:text-white" />
+								<div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
+									<Code className="w-5 h-5 text-white" />
 								</div>
 								<h2 className="text-2xl font-bold text-main dark:text-main">Development Approach</h2>
 							</div>
@@ -364,8 +360,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
 					{activeTab === "interests" && (
 						<div className="animate-fadeIn">
 							<div className="flex items-center mb-6 pb-3 border-b border-primary-hover dark:border-primary-hover">
-								<div className="w-10 h-10 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
-									<FolderOpen className="w-5 h-5 text-white dark:text-white" />
+								<div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center mr-3 shadow">
+									<FolderOpen className="w-5 h-5 text-white" />
 								</div>
 								<h2 className="text-2xl font-bold text-main dark:text-main">Areas of Interest</h2>
 							</div>
@@ -376,8 +372,8 @@ console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
 									return (
 										<HoverCard key={idx}>
 											<div className="flex items-start">
-												<div className="w-8 h-8 bg-primary-hover dark:bg-primary rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-													<IconComponent className="w-4 h-4 text-white dark:text-white" />
+												<div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
+													<IconComponent className="w-4 h-4 text-white" />
 												</div>
 												<div>
 													<h4 className="font-bold text-main dark:text-main mb-1">

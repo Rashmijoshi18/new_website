@@ -102,7 +102,7 @@ export default function Projects() {
 										href={project.demo}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="bg-primary-hover dark:bg-primary text-white dark:text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base hover:bg-primary dark:hover:bg-primary-hover transition-colors"
+										className="bg-primary dark:bg-primary text-white dark:text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base hover:bg-primary dark:hover:bg-primary transition-colors"
 									>
 										<ExternalLink size={16} className="sm:w-5 sm:h-5" />
 										Live Demo

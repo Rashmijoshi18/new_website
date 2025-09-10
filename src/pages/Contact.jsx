@@ -62,13 +62,13 @@ const ContactPage = () => {
 			{/* Header */}
 			<header className="bg-surface dark:bg-surface border-b border-main dark:border-main">
 				<div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-8 lg:py-12 text-center">
-					<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary-bright mb-3 sm:mb-4">
-						Get In <span className="text-primary-bright">Touch</span>
+					<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-3 sm:mb-4">
+						Get In <span className="text-primary">Touch</span>
 					</h1>
 					<p className="text-sm sm:text-base lg:text-lg text-light dark:text-light max-w-2xl mx-auto mb-4 sm:mb-6 px-2">
 						Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
 					</p>
-					<div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm text-primary-bright bg-surface-elevated dark:bg-surface-elevated px-3 sm:px-4 py-2 rounded-full">
+					<div className="inline-flex items-center justify-center gap-2 text-xs sm:text-sm text-primary bg-surface-elevated dark:bg-surface-elevated px-3 sm:px-4 py-2 rounded-full">
 						<Clock size={14} className="sm:w-4 sm:h-4" />
 						<span className="whitespace-nowrap">Typically responds within 24 hours</span>
 					</div>
@@ -82,7 +82,7 @@ const ContactPage = () => {
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 						{[
 							{
-								icon: <Mail size={24} className="text-primary-bright" />,
+								icon: <Mail size={24} className="text-primary" />,
 								title: "Email",
 								desc: "rashmijoshi3699@gmail.com",
 								subtitle: "Send me a message anytime",
@@ -90,7 +90,7 @@ const ContactPage = () => {
 								target: "_blank",
 							},
 							{
-								icon: <Linkedin size={24} className="text-primary-bright" />,
+								icon: <Linkedin size={24} className="text-primary" />,
 								title: "LinkedIn",
 								desc: "linkedin.com/in/rashmi3699",
 								subtitle: "Connect with me on LinkedIn",
@@ -98,7 +98,7 @@ const ContactPage = () => {
 								target: "_blank",
 							},
 							{
-								icon: <MapPin size={24} className="text-primary-bright" />,
+								icon: <MapPin size={24} className="text-primary" />,
 								title: "Location",
 								desc: "India",
 								subtitle: "Available remotely worldwide",
@@ -112,12 +112,12 @@ const ContactPage = () => {
 								target={contact.target}
 								rel={contact.target === "_blank" ? "noopener noreferrer" : ""}
 								className="bg-surface dark:bg-surface rounded-lg p-4 sm:p-6 text-center border border-main dark:border-main
-                hover:shadow-lg focus:shadow-lg active:shadow-lg hover:border-primary-bright dark:hover:border-primary-bright
+                hover:shadow-lg focus:shadow-lg active:shadow-lg hover:border-primary- dark:hover:border-primary-
                 transition-all duration-300 block cursor-pointer hover:scale-105"
 							>
 								<div className="mb-4 flex justify-center">{contact.icon}</div>
 								<h3 className="font-semibold text-main dark:text-main mb-2">{contact.title}</h3>
-								<p className="text-primary-bright font-medium mb-2 text-sm sm:text-base break-all sm:break-normal">
+								<p className="text-primary font-medium mb-2 text-sm sm:text-base break-all sm:break-normal">
 									{contact.desc}
 								</p>
 								<p className="text-light dark:text-light text-sm">{contact.subtitle}</p>
@@ -129,7 +129,7 @@ const ContactPage = () => {
 				{/* Contact Form */}
 				<section className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main p-4 sm:p-6 lg:p-8">
 					<div className="text-center mb-6 sm:mb-8">
-						<h2 className="text-2xl sm:text-3xl font-bold text-primary-bright mb-2">Send a Message</h2>
+						<h2 className="text-2xl sm:text-3xl font-bold text-primary mb-2">Send a Message</h2>
 						<p className="text-light dark:text-light">
 							Fill out the form below and I'll get back to you soon
 						</p>
@@ -149,7 +149,7 @@ const ContactPage = () => {
 									value={formData.name}
 									onChange={handleInputChange}
 									placeholder="Your name"
-									className={`w-full p-3 sm:p-4 border rounded-lg outline-none font-medium bg-background dark:bg-background text-main dark:text-main placeholder-light dark:placeholder-light focus:border-primary-bright focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-light transition-all ${
+									className={`w-full p-3 sm:p-4 border rounded-lg outline-none font-medium bg-background dark:bg-background text-main dark:text-main placeholder-light dark:placeholder-light focus:border-primary focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-light transition-all ${
 										errors.name
 											? "border-red-400 bg-red-50 dark:bg-red-900/10"
 											: "border-main dark:border-main"
@@ -170,7 +170,7 @@ const ContactPage = () => {
 									value={formData.email}
 									onChange={handleInputChange}
 									placeholder="your.email@example.com"
-									className={`w-full p-3 sm:p-4 border rounded-lg outline-none bg-background dark:bg-background text-main dark:text-main placeholder-light dark:placeholder-light focus:border-primary-bright focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-light transition-all ${
+									className={`w-full p-3 sm:p-4 border rounded-lg outline-none bg-background dark:bg-background text-main dark:text-main placeholder-light dark:placeholder-light focus:border-primary focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-light transition-all ${
 										errors.email
 											? "border-red-400 bg-red-50 dark:bg-red-900/10"
 											: "border-main dark:border-main"
@@ -207,9 +207,7 @@ const ContactPage = () => {
 						<div
 							onClick={handleSubmit}
 							className={`w-full bg-primary text-white py-3 sm:py-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer ${
-								isSubmitting
-									? "opacity-50 cursor-not-allowed bg-primary"
-									: "hover:bg-theme-primary-hover"
+								isSubmitting ? "opacity-50 cursor-not-allowed bg-primary" : "hover:bg-theme-primary"
 							}`}
 						>
 							{isSubmitting ? (
@@ -230,7 +228,7 @@ const ContactPage = () => {
 				{/* What to Expect Section */}
 				<section className="mt-8 sm:mt-12 text-center">
 					<div className="bg-surface-elevated dark:bg-surface-elevated rounded-lg p-4 sm:p-6 border border-main dark:border-main">
-						<h3 className="font-semibold text-main dark:text-main mb-6 text-lg sm:text-xl">
+						<h3 className="font-semibold text-primary dark:text-primary mb-6 text-lg sm:text-xl">
 							What to expect after you reach out
 						</h3>
 						<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-sm">
@@ -252,7 +250,7 @@ const ContactPage = () => {
 								},
 							].map((item, i) => (
 								<div key={i} className="flex flex-col items-center">
-									<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-bright flex items-center justify-center text-white font-bold mb-3 text-sm sm:text-base">
+									<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mb-3 text-sm sm:text-base">
 										{item.step}
 									</div>
 									<p className="text-main dark:text-main font-medium text-sm sm:text-base">
@@ -267,7 +265,7 @@ const ContactPage = () => {
 
 			{/* Success Toast */}
 			{success && (
-				<div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-primary-bright text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-bounce z-50 max-w-xs sm:max-w-sm">
+				<div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-primary text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 animate-bounce z-50 max-w-xs sm:max-w-sm">
 					<Check size={20} />
 					<span className="text-sm sm:text-base">Message sent successfully!</span>
 				</div>
