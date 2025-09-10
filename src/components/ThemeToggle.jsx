@@ -60,7 +60,8 @@ export default function ThemeToggle() {
 	return (
 		<button
 			onClick={handleToggle}
-			className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:slate-900 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+			className="p-2 rounded-full hover-bg-surface-hover transition transform hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+			// className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:slate-300 focus:ring-offset-2 dark:focus:ring-offset-gray-100"
 			aria-label={buttonLabel}
 			title={buttonLabel}
 			type="button"
