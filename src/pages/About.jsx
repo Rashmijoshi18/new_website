@@ -14,6 +14,8 @@ import {
 	Brain,
 	Target,
 } from "lucide-react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // ✅ Reusable card with hover/tap effect
 function HoverCard({ children }) {
@@ -34,14 +36,9 @@ function HoverCard({ children }) {
 
 export default function About() {
 	const [activeTab, setActiveTab] = useState("intro");
+	const [copied, setCopied] = useState(false);
 
-	useEffect(() => {
-		const copyButton = document.querySelector(".copy-btn");
-		const copySuccess = document.getElementById("copy-success");
-
-		if (copyButton) {
-			copyButton.addEventListener("click", function () {
-				const code = `const myApproach = {
+	const approachCode = `const myApproach = {
   focus: "User Experience",
   codeStyle: "Clean & Maintainable",
   testing: "Test-Driven Development",
@@ -50,18 +47,12 @@ export default function About() {
 
 console.log('Crafting scalable & meaningful solutions 🚀');`;
 
-				navigator.clipboard.writeText(code).then(function () {
-					copySuccess.classList.remove("hidden");
-					copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
-
-					setTimeout(function () {
-						copySuccess.classList.add("hidden");
-						copyButton.innerHTML = '<i class="far fa-copy"></i> Copy';
-					}, 2000);
-				});
-			});
-		}
-	}, [activeTab]);
+	const copyToClipboard = () => {
+		navigator.clipboard.writeText(approachCode).then(() => {
+			setCopied(true);
+			setTimeout(() => setCopied(false), 2000);
+		});
+	};
 
 	const tabs = [
 		{ id: "intro", label: "Introduction", icon: User },
@@ -163,7 +154,7 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 								onClick={() => setActiveTab(tab.id)}
 								className={`px-4 py-2 rounded-lg font-medium flex items-center transition-all duration-300 ${
 									isActive
-										? "bg-primary text-white shadow-md" // ✅ Active bg like sidebar
+										? "bg-primary text-white shadow-md"
 										: "text-light dark:text-light hover:bg-surface-elevated dark:hover:bg-surface-elevated"
 								}`}
 							>
@@ -328,31 +319,39 @@ console.log('Crafting scalable & meaningful solutions 🚀');`;
 										</div>
 										<span className="text-subtle text-xs font-mono ml-2">myApproach.js</span>
 									</div>
-									<button className="copy-btn flex items-center gap-1 px-2.5 py-1.5 text-xs text-subtle hover:text-code bg-code-header hover:bg-surface-elevated rounded transition-colors">
-										<i className="far fa-copy"></i> <span>Copy</span>
+									<button
+										onClick={copyToClipboard}
+										className="copy-btn flex items-center gap-1 px-2.5 py-1.5 text-xs text-subtle hover:text-code bg-code-header hover:bg-surface-elevated rounded transition-colors"
+									>
+										{copied ? (
+											<>
+												<i className="fas fa-check"></i> Copied!
+											</>
+										) : (
+											<>
+												<i className="far fa-copy"></i> Copy
+											</>
+										)}
 									</button>
 								</div>
 
 								{/* Code Content */}
 								<div className="p-4 overflow-x-auto">
-									<pre className="text-sm text-code font-mono leading-relaxed">{`const myApproach = {
-  focus: "User Experience",
-  codeStyle: "Clean & Maintainable",
-  testing: "Test-Driven Development",
-  learning: "Continuous Growth"
-};
-
-console.log('Crafting scalable & meaningful solutions 🚀');`}</pre>
+									<SyntaxHighlighter
+										language="javascript"
+										style={vscDarkPlus}
+										customStyle={{ margin: 0, background: "transparent" }}
+									>
+										{approachCode}
+									</SyntaxHighlighter>
 								</div>
 							</div>
 
-							{/* ✅ Success message */}
-							<div
-								id="copy-success"
-								className="hidden mt-4 px-4 py-2 bg-primary-light text-theme-success rounded-lg text-center"
-							>
-								<i className="fas fa-check-circle mr-2"></i> Code copied to clipboard!
-							</div>
+							{copied && (
+								<div className="mt-4 px-4 py-2 bg-primary-light text-primary rounded-lg text-center">
+									<i className="fas fa-check-circle mr-2"></i> Code copied to clipboard!
+								</div>
+							)}
 						</div>
 					)}
 

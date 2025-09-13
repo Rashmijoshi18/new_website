@@ -7,6 +7,7 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import ScrollToTop from "./utils/ScrollToTop"; // ✅ import it
 
 export default function App() {
 	return (
@@ -18,6 +19,7 @@ export default function App() {
 			<div className="flex-1 flex flex-col">
 				{/* Main content */}
 				<main className="flex-1">
+					<ScrollToTop /> {/* ✅ Add this here */}
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/about" element={<About />} />

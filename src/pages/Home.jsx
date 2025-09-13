@@ -1,38 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import My_resume from "../assets/rashmi_resume.pdf";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export default function Home() {
+	const [copied, setCopied] = useState(false);
+
 	useEffect(() => {
-		const copyButton = document.querySelector(".copy-btn");
-		const copySuccess = document.getElementById("copy-success");
-
-		if (copyButton) {
-			copyButton.addEventListener("click", function () {
-				const code = `const developer = {
-  name: 'Rashmi Joshi',
-  role: 'Full Stack Developer',
-  location: 'India',
-  specialties: ['React', 'Node.js', 'JavaScript', 'Git', 'Tailwind CSS', 'Bootstrap'],
-  currentStatus: '2nd Year Student',
-  passion: 'Building scalable web applications',
-  currentFocus: 'Modern web technologies & UX'
-};
-
-console.log('Welcome to my digital world! 🚀');`;
-
-				navigator.clipboard.writeText(code).then(function () {
-					copySuccess.classList.remove("hidden");
-					copyButton.innerHTML = '<i class="fas fa-check"></i> Copied!';
-
-					setTimeout(function () {
-						copySuccess.classList.add("hidden");
-						copyButton.innerHTML = '<i class="far fa-copy"></i> Copy';
-					}, 2000);
-				});
-			});
-		}
-
 		// Hover effects for cards
 		const cards = document.querySelectorAll(".stat-card, .service-card");
 		cards.forEach((card) => {
@@ -44,6 +19,25 @@ console.log('Welcome to my digital world! 🚀');`;
 			});
 		});
 	}, []);
+
+	const codeString = `const developer = {
+  name: 'Rashmi Joshi',
+  role: 'Full Stack Developer',
+  location: 'India',
+  specialties: ['React', 'Node.js', 'JavaScript', 'Git', 'Tailwind CSS', 'Bootstrap'],
+  currentStatus: '2nd Year Student',
+  passion: 'Building scalable web applications',
+  currentFocus: 'Modern web technologies & UX'
+};
+
+console.log('Welcome to my digital world! 🚀');`;
+
+	const copyToClipboard = () => {
+		navigator.clipboard.writeText(codeString).then(() => {
+			setCopied(true);
+			setTimeout(() => setCopied(false), 2000);
+		});
+	};
 
 	return (
 		<div className="px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
@@ -108,7 +102,7 @@ console.log('Welcome to my digital world! 🚀');`;
 					</div>
 
 					<div className="flex flex-wrap items-center gap-3 mb-6">
-						<span className="px-3 py-1 text-sm font-semibold rounded-full bg-primary  text-white">
+						<span className="px-3 py-1 text-sm font-semibold rounded-full bg-primary text-white">
 							DEVELOPER
 						</span>
 						<code className="px-3 py-1 rounded-lg bg-badge text-sm text-badge font-mono border border-main">
@@ -134,37 +128,39 @@ console.log('Welcome to my digital world! 🚀');`;
 								</div>
 								<span className="text-subtle text-xs sm:text-sm font-mono ml-2">developer.js</span>
 							</div>
-							<button className="copy-btn flex items-center gap-1 px-2.5 py-1.5 text-xs text-subtle hover:text-code bg-code-header hover:bg-surface-hover rounded transition-colors">
-								<i className="far fa-copy"></i> <span>Copy</span>
+							<button
+								onClick={copyToClipboard}
+								className="copy-btn flex items-center gap-1 px-2.5 py-1.5 text-xs text-subtle hover:text-code bg-code-header hover:bg-surface-hover rounded transition-colors"
+							>
+								{copied ? (
+									<>
+										<i className="fas fa-check"></i> Copied!
+									</>
+								) : (
+									<>
+										<i className="far fa-copy"></i> Copy
+									</>
+								)}
 							</button>
 						</div>
 
 						{/* Code Content */}
 						<div className="code-container p-3 sm:p-4 overflow-x-auto">
-							<pre className="text-xs sm:text-sm text-code font-mono leading-relaxed">
-								<code>
-									{`const developer = {
-  name: 'Rashmi Joshi',
-  role: 'Full Stack Developer',
-  location: 'India',
-  specialties: ['React', 'Node.js', 'JavaScript', 'Git', 'Tailwind CSS', 'Bootstrap'],
-  currentStatus: '2nd Year Student',
-  passion: 'Building scalable web applications',
-  currentFocus: 'Modern web technologies & UX'
-};
-
-console.log('Welcome to my digital world! 🚀');`}
-								</code>
-							</pre>
+							<SyntaxHighlighter
+								language="javascript"
+								style={vscDarkPlus}
+								customStyle={{ margin: 0, background: "transparent" }}
+							>
+								{codeString}
+							</SyntaxHighlighter>
 						</div>
 					</div>
 
-					<div
-						id="copy-success"
-						className="hidden mt-4 px-4 py-2 bg-primary-light text-primary rounded-lg text-center"
-					>
-						<i className="fas fa-check-circle mr-2"></i> Code copied to clipboard!
-					</div>
+					{copied && (
+						<div className="mt-4 px-4 py-2 bg-primary-light text-primary rounded-lg text-center">
+							<i className="fas fa-check-circle mr-2"></i> Code copied to clipboard!
+						</div>
+					)}
 				</section>
 
 				{/* What I Do Section */}
