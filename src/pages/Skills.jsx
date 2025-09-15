@@ -1,3 +1,290 @@
+// import React, { useState } from "react";
+// import {
+// 	Code,
+// 	Database,
+// 	Globe,
+// 	Server,
+// 	Trophy,
+// 	Award,
+// 	Users,
+// 	MessageCircle,
+// 	Target,
+// 	Lightbulb,
+// 	Heart,
+// 	Zap,
+// } from "lucide-react";
+
+// const SimpleSkillsPage = () => {
+// 	const [activeTab, setActiveTab] = useState("skills");
+
+// 	const skills = [
+// 		{
+// 			name: "JavaScript",
+// 			level: 90,
+// 			icon: <Code className="w-5 h-5" />,
+// 			category: "Frontend",
+// 		},
+// 		{
+// 			name: "React.js",
+// 			level: 85,
+// 			icon: <Code className="w-5 h-5" />,
+// 			category: "Frontend",
+// 		},
+// 		{
+// 			name: "HTML/CSS",
+// 			level: 95,
+// 			icon: <Globe className="w-5 h-5" />,
+// 			category: "Frontend",
+// 		},
+// 		{
+// 			name: "Tailwind/Bootstrap",
+// 			level: 75,
+// 			icon: <code className="w-5 h-5" />,
+// 			category: "Frontend",
+// 		},
+// 		{
+// 			name: "Node.js",
+// 			level: 80,
+// 			icon: <Server className="w-5 h-5" />,
+// 			category: "Backend",
+// 		},
+// 		{
+// 			name: "Express.js",
+// 			level: 80,
+// 			icon: <Server className="w-5 h-5" />,
+// 			category: "Backend",
+// 		},
+// 		{
+// 			name: "MongoDB",
+// 			level: 75,
+// 			icon: <Database className="w-5 h-5" />,
+// 			category: "Database",
+// 		},
+// 		{
+// 			name: "MySQL",
+// 			level: 80,
+// 			icon: <Database className="w-5 h-5" />,
+// 			category: "Database",
+// 		},
+// 		{
+// 			name: "Git/Github",
+// 			level: 88,
+// 			icon: <Code className="w-5 h-5" />,
+// 			category: "Tool",
+// 		},
+// 		{
+// 			name: "Vite",
+// 			level: 88,
+// 			icon: <Code className="w-5 h-5" />,
+// 			category: "Tool",
+// 		},
+// 		{
+// 			name: "Vercel",
+// 			level: 88,
+// 			icon: <Code className="w-5 h-5" />,
+// 			category: "Hosting & Deployment",
+// 		},
+// 	];
+
+// 	const achievements = [
+// 		{
+// 			title: "Frontend Developer Certification",
+// 			date: "2024",
+// 			icon: <Award className="w-5 h-5" />,
+// 			issuer: "HackerRank",
+// 		},
+// 		{
+// 			title: "React JS Concepts",
+// 			date: "2025",
+// 			icon: <Trophy className="w-5 h-5" />,
+// 			issuer: "Tech Veda",
+// 		},
+// 		{
+// 			title: "Introduction to DSA",
+// 			date: "2023",
+// 			icon: <Code className="w-5 h-5" />,
+// 			issuer: "Coding Tantra",
+// 		},
+// 		{
+// 			title: "Hack-a-Throne",
+// 			date: "2024",
+// 			icon: <Database className="w-5 h-5" />,
+// 			issuer: "GeeksforGeeks",
+// 		},
+// 	];
+
+// 	const softSkills = [
+// 		{
+// 			name: "Team Leadership",
+// 			icon: <Users className="w-5 h-5" />,
+// 			description: "Leading development teams and coordinating cross-functional projects",
+// 		},
+// 		{
+// 			name: "Communication",
+// 			icon: <MessageCircle className="w-5 h-5" />,
+// 			description: "Clear technical communication with stakeholders and team members",
+// 		},
+// 		{
+// 			name: "Problem Solving",
+// 			icon: <Lightbulb className="w-5 h-5" />,
+// 			description: "Analytical thinking and creative solutions to complex challenges",
+// 		},
+// 		{
+// 			name: "Project Management",
+// 			icon: <Target className="w-5 h-5" />,
+// 			description: "Planning, organizing, and delivering projects on time and within scope",
+// 		},
+// 		{
+// 			name: "Adaptability",
+// 			icon: <Zap className="w-5 h-5" />,
+// 			description: "Quick learning and adapting to new technologies and changing requirements",
+// 		},
+// 		{
+// 			name: "Empathy",
+// 			icon: <Heart className="w-5 h-5" />,
+// 			description: "Understanding user needs and team dynamics for better collaboration",
+// 		},
+// 	];
+
+// 	return (
+// 		<div className="min-h-screen px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
+// 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+// 				{/* Heading */}
+// 				<div className="text-center mb-8">
+// 					<h2 className="text-3xl lg:text-4xl font-bold text-primary-bright mb-2">Professional Profile</h2>
+// 					<p className="text-light dark:text-light">Technical skills, soft skills, and achievements</p>
+// 				</div>
+
+// 				{/* Navigation */}
+// 				<div className="flex justify-center mb-8">
+// 					<div className="flex flex-col sm:flex-row bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main overflow-hidden">
+// 						{["skills", "soft-skills", "achievements"].map((tab) => (
+// 							<button
+// 								key={tab}
+// 								onClick={() => setActiveTab(tab)}
+// 								className={`px-6 py-3 font-medium transition-all duration-300 text-sm sm:text-base ${
+// 									activeTab === tab
+// 										? "bg-primary text-white shadow-md"
+// 										: "text-light dark:text-light hover:text-primary-bright hover:bg-surface-elevated dark:hover:bg-surface-elevated"
+// 								}`}
+// 							>
+// 								{tab === "skills"
+// 									? "Technical Skills"
+// 									: tab === "soft-skills"
+// 									? "Soft Skills"
+// 									: "Achievements"}
+// 							</button>
+// 						))}
+// 					</div>
+// 				</div>
+
+// 				{/* Technical Skills */}
+// 				{activeTab === "skills" && (
+// 					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
+// 						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
+// 							<h3 className="text-xl font-bold">Technical Skills</h3>
+// 						</div>
+// 						<div className="p-6">
+// 							{skills.map((skill, index) => (
+// 								<div
+// 									key={index}
+// 									className="flex items-center justify-between py-3 px-3 rounded-lg transition-all duration-300 custom-hover"
+// 								>
+// 									<div className="flex items-center space-x-3 group">
+// 										<div className="w-2 h-2 bg-primary-bright rounded-full transition-transform duration-300 group-hover:scale-150"></div>
+// 										<span className="text-main dark:text-main font-medium">{skill.name}</span>
+// 										<span className="text-light dark:text-light text-sm">({skill.category})</span>
+// 									</div>
+// 								</div>
+// 							))}
+// 						</div>
+// 					</div>
+// 				)}
+
+// 				{/* Soft Skills */}
+// 				{activeTab === "soft-skills" && (
+// 					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
+// 						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
+// 							<h3 className="text-xl font-bold">Soft Skills</h3>
+// 						</div>
+// 						<div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+// 							{softSkills.map((skill, index) => (
+// 								<div
+// 									key={index}
+// 									className="rounded-lg p-5 bg-surface-elevated dark:bg-surface-elevated shadow-sm border border-main dark:border-main transition-all duration-300 custom-hover"
+// 								>
+// 									<div className="flex justify-center mb-3">
+// 										<div className="p-3 bg-primary-light dark:bg-primary-light text-primary-bright rounded-full">
+// 											{skill.icon}
+// 										</div>
+// 									</div>
+// 									<div className="text-center">
+// 										<h4 className="font-semibold text-main dark:text-main mb-2">{skill.name}</h4>
+// 										<p className="text-light dark:text-light text-sm">{skill.description}</p>
+// 									</div>
+// 								</div>
+// 							))}
+// 						</div>
+// 					</div>
+// 				)}
+
+// 				{/* Achievements */}
+// 				{activeTab === "achievements" && (
+// 					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
+// 						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
+// 							<h3 className="text-xl font-bold">Achievements</h3>
+// 						</div>
+// 						<div className="p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+// 							{achievements.map((ach, index) => (
+// 								<div
+// 									key={index}
+// 									className="rounded-lg p-5 bg-surface-elevated dark:bg-surface-elevated shadow-sm border border-main dark:border-main transition-all duration-300 custom-hover"
+// 								>
+// 									<div className="flex items-start space-x-4">
+// 										<div className="p-3 bg-primary-light dark:bg-primary-light text-primary-bright rounded-lg">
+// 											{ach.icon}
+// 										</div>
+// 										<div className="flex-1">
+// 											<h3 className="font-semibold text-main dark:text-main mb-1">{ach.title}</h3>
+// 											<p className="text-light dark:text-light text-sm">{ach.issuer}</p>
+// 											<p className="text-primary-bright text-sm font-medium">{ach.date}</p>
+// 										</div>
+// 									</div>
+// 								</div>
+// 							))}
+// 						</div>
+// 					</div>
+// 				)}
+// 			</div>
+
+// 			{/* Animations & Custom Hover */}
+// 			<style>{`
+//         .animate-slide-up {
+//           animation: slideUp 0.6s ease-in-out;
+//         }
+//         @keyframes slideUp {
+//           from { opacity: 0; transform: translateY(20px); }
+//           to { opacity: 1; transform: translateY(0); }
+//         }
+
+//         /* Custom hover effect */
+//         .custom-hover {
+//           position: relative;
+//         }
+//         .custom-hover:hover {
+//           transform: translateY(-5px) scale(1.02);
+//           box-shadow: 0 12px 20px rgba(0,0,0,0.08);
+//           // border-color: #16a34a;
+//         }
+//         .custom-hover:active {
+//           transform: scale(0.98);
+//         }
+//       `}</style>
+// 		</div>
+// 	);
+// };
+
+// export default SimpleSkillsPage;
 import React, { useState } from "react";
 import {
 	Code,
@@ -13,106 +300,68 @@ import {
 	Heart,
 	Zap,
 } from "lucide-react";
+// import profileImage from "../assets/me.png";
+import react_js from "../assets/react.pdf";
+import dsa from "../assets/dsa_mooc.png";
+import geeksforgeeks from "../assets/hackathon.pdf";
+import cpp from "../assets/c++.pdf";
 
 const SimpleSkillsPage = () => {
 	const [activeTab, setActiveTab] = useState("skills");
 
+	// ------------------ Technical Skills ------------------
 	const skills = [
-		{
-			name: "JavaScript",
-			level: 90,
-			icon: <Code className="w-5 h-5" />,
-			category: "Frontend",
-		},
-		{
-			name: "React.js",
-			level: 85,
-			icon: <Code className="w-5 h-5" />,
-			category: "Frontend",
-		},
-		{
-			name: "HTML/CSS",
-			level: 95,
-			icon: <Globe className="w-5 h-5" />,
-			category: "Frontend",
-		},
-		{
-			name: "Tailwind/Bootstrap",
-			level: 75,
-			icon: <code className="w-5 h-5" />,
-			category: "Frontend",
-		},
-		{
-			name: "Node.js",
-			level: 80,
-			icon: <Server className="w-5 h-5" />,
-			category: "Backend",
-		},
-		{
-			name: "Express.js",
-			level: 80,
-			icon: <Server className="w-5 h-5" />,
-			category: "Backend",
-		},
-		{
-			name: "MongoDB",
-			level: 75,
-			icon: <Database className="w-5 h-5" />,
-			category: "Database",
-		},
-		{
-			name: "MySQL",
-			level: 80,
-			icon: <Database className="w-5 h-5" />,
-			category: "Database",
-		},
-		{
-			name: "Git/Github",
-			level: 88,
-			icon: <Code className="w-5 h-5" />,
-			category: "Tool",
-		},
-		{
-			name: "Vite",
-			level: 88,
-			icon: <Code className="w-5 h-5" />,
-			category: "Tool",
-		},
-		{
-			name: "Vercel",
-			level: 88,
-			icon: <Code className="w-5 h-5" />,
-			category: "Hosting & Deployment",
-		},
+		{ name: "JavaScript", level: 90, icon: <Code className="w-5 h-5" />, category: "Frontend" },
+		{ name: "React.js", level: 85, icon: <Code className="w-5 h-5" />, category: "Frontend" },
+		{ name: "HTML/CSS", level: 95, icon: <Globe className="w-5 h-5" />, category: "Frontend" },
+		{ name: "Tailwind/Bootstrap", level: 75, icon: <Code className="w-5 h-5" />, category: "Frontend" },
+		{ name: "Node.js", level: 80, icon: <Server className="w-5 h-5" />, category: "Backend" },
+		{ name: "Express.js", level: 80, icon: <Server className="w-5 h-5" />, category: "Backend" },
+		{ name: "MongoDB", level: 75, icon: <Database className="w-5 h-5" />, category: "Database" },
+		{ name: "MySQL", level: 80, icon: <Database className="w-5 h-5" />, category: "Database" },
+		{ name: "Git/Github", level: 88, icon: <Code className="w-5 h-5" />, category: "Tool" },
+		{ name: "Vite", level: 88, icon: <Code className="w-5 h-5" />, category: "Tool" },
+		{ name: "Vercel", level: 88, icon: <Code className="w-5 h-5" />, category: "Hosting & Deployment" },
 	];
 
+	// ------------------ Achievements (Certificates) ------------------
 	const achievements = [
-		{
-			title: "Frontend Developer Certification",
-			date: "2024",
-			icon: <Award className="w-5 h-5" />,
-			issuer: "HackerRank",
-		},
 		{
 			title: "React JS Concepts",
 			date: "2025",
 			icon: <Trophy className="w-5 h-5" />,
 			issuer: "Tech Veda",
+			// certificate: "",
+			title: "React JS Concepts",
+			date: "2025",
+			icon: <Trophy className="w-5 h-5" />,
+			issuer: "Tech Veda",
+			certificate: react_js,
 		},
 		{
-			title: "Introduction to DSA",
-			date: "2023",
-			icon: <Code className="w-5 h-5" />,
-			issuer: "Coding Tantra",
+			title: "Cpp Certification",
+			date: "2025",
+			icon: <Award className="w-5 h-5" />,
+			issuer: "Infosys",
+			certificate: cpp,
 		},
 		{
 			title: "Hack-a-Throne",
 			date: "2024",
 			icon: <Database className="w-5 h-5" />,
 			issuer: "GeeksforGeeks",
+			certificate: geeksforgeeks,
+		},
+		{
+			title: "Introduction to DSA",
+			date: "2025",
+			icon: <Code className="w-5 h-5" />,
+			issuer: "Coding Tantra",
+			certificate: dsa,
 		},
 	];
 
+	// ------------------ Soft Skills ------------------
 	const softSkills = [
 		{
 			name: "Team Leadership",
@@ -155,7 +404,7 @@ const SimpleSkillsPage = () => {
 					<p className="text-light dark:text-light">Technical skills, soft skills, and achievements</p>
 				</div>
 
-				{/* Navigation */}
+				{/* Navigation Tabs */}
 				<div className="flex justify-center mb-8">
 					<div className="flex flex-col sm:flex-row bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main overflow-hidden">
 						{["skills", "soft-skills", "achievements"].map((tab) => (
@@ -178,7 +427,7 @@ const SimpleSkillsPage = () => {
 					</div>
 				</div>
 
-				{/* Technical Skills */}
+				{/* ------------------ Technical Skills ------------------ */}
 				{activeTab === "skills" && (
 					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
 						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
@@ -201,7 +450,7 @@ const SimpleSkillsPage = () => {
 					</div>
 				)}
 
-				{/* Soft Skills */}
+				{/* ------------------ Soft Skills ------------------ */}
 				{activeTab === "soft-skills" && (
 					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
 						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
@@ -228,7 +477,7 @@ const SimpleSkillsPage = () => {
 					</div>
 				)}
 
-				{/* Achievements */}
+				{/* ------------------ Achievements (Certificates) ------------------ */}
 				{activeTab === "achievements" && (
 					<div className="bg-surface dark:bg-surface rounded-lg shadow-sm border border-main dark:border-main animate-slide-up">
 						<div className="bg-primary text-white px-6 py-4 rounded-t-lg">
@@ -247,7 +496,19 @@ const SimpleSkillsPage = () => {
 										<div className="flex-1">
 											<h3 className="font-semibold text-main dark:text-main mb-1">{ach.title}</h3>
 											<p className="text-light dark:text-light text-sm">{ach.issuer}</p>
-											<p className="text-primary-bright text-sm font-medium">{ach.date}</p>
+											<p className="text-primary-bright text-sm font-medium mb-3">{ach.date}</p>
+
+											{/* Certificate link */}
+											{ach.certificate && (
+												<a
+													href={ach.certificate}
+													target="_blank"
+													rel="noopener noreferrer"
+													className="inline-block text-sm font-medium text-primary hover:underline"
+												>
+													View Certificate
+												</a>
+											)}
 										</div>
 									</div>
 								</div>
@@ -257,7 +518,7 @@ const SimpleSkillsPage = () => {
 				)}
 			</div>
 
-			{/* Animations & Custom Hover */}
+			{/* Animations & Hover Styles */}
 			<style>{`
         .animate-slide-up { 
           animation: slideUp 0.6s ease-in-out; 
@@ -267,14 +528,12 @@ const SimpleSkillsPage = () => {
           to { opacity: 1; transform: translateY(0); } 
         }
 
-        /* Custom hover effect */
         .custom-hover {
           position: relative;
         }
         .custom-hover:hover {
           transform: translateY(-5px) scale(1.02);
           box-shadow: 0 12px 20px rgba(0,0,0,0.08);
-          // border-color: #16a34a;
         }
         .custom-hover:active {
           transform: scale(0.98);
