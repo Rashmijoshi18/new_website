@@ -40,14 +40,12 @@ export default function Projects() {
 				<div className="text-center mb-16">
 					<div className="inline-flex items-center gap-2 bg-surface-elevated dark:bg-surface-elevated px-4 py-2 rounded-full mb-6 border border-main dark:border-main">
 						<Code2 className="w-5 h-5 text-primary-bright" />
-						<span className="text-primary-bright font-semibold text-sm uppercase tracking-wider">
-							Portfolio
-						</span>
+						<span className="text-primary font-semibold text-sm uppercase tracking-wider">Portfolio</span>
 					</div>
 
-					<h2 className="text-4xl font-bold text-primary-bright mb-4">
+					<h2 className="text-4xl font-bold text-primary mb-4">
 						Featured
-						<span className="text-4xl font-bold text-primary-bright mb-4"> Projects</span>
+						<span className="text-4xl font-bold text-primary mb-4"> Projects</span>
 					</h2>
 
 					<p className="text-light dark:text-light max-w-2xl mx-auto text-lg">
@@ -90,7 +88,7 @@ export default function Projects() {
 									{project.tech.map((tech, i) => (
 										<span
 											key={i}
-											className="bg-surface-elevated dark:bg-surface-elevated text-primary-bright px-4 py-2 rounded-lg text-sm font-medium border border-main dark:border-main hover:border-primary-bright transition-colors"
+											className="bg-surface-elevated dark:bg-surface-elevated text-primary px-4 py-2 rounded-lg text-sm font-medium border border-main dark:border-main hover:border-primary transition-colors"
 										>
 											{tech}
 										</span>
@@ -111,7 +109,7 @@ export default function Projects() {
 										href={project.code}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="border-2 border-primary text-primary-bright px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base hover:bg-theme-primary-hover hover:text-white transition-colors"
+										className="border-2 border-primary text-primary px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base hover:border-main shadow-xl hover:text-white transition-colors"
 									>
 										<Github size={16} className="sm:w-5 sm:h-5" />
 										View Code

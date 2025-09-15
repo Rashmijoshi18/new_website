@@ -113,7 +113,7 @@ const SimpleSkillsPage = () => {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
 				{/* Heading */}
 				<div className="text-center mb-8">
-					<h2 className="text-3xl lg:text-4xl font-bold text-primary-bright mb-2">Professional Profile</h2>
+					<h2 className="text-3xl lg:text-4xl font-bold text-primary mb-2">Professional Profile</h2>
 					<p className="text-light dark:text-light">Technical skills, soft skills, and achievements</p>
 				</div>
 
@@ -127,7 +127,7 @@ const SimpleSkillsPage = () => {
 								className={`px-6 py-3 font-medium transition-all duration-300 text-sm sm:text-base ${
 									activeTab === tab
 										? "bg-primary text-white shadow-md"
-										: "text-light dark:text-light hover:text-primary-bright hover:bg-surface-elevated dark:hover:bg-surface-elevated"
+										: "text-light dark:text-light hover:text-primary hover:bg-surface-elevated dark:hover:bg-surface-elevated"
 								}`}
 							>
 								{tab === "skills"
@@ -153,7 +153,7 @@ const SimpleSkillsPage = () => {
 									className="flex items-center justify-between py-3 px-3 rounded-lg transition-all duration-300 custom-hover"
 								>
 									<div className="flex items-center space-x-3 group">
-										<div className="w-2 h-2 bg-primary-bright rounded-full transition-transform duration-300 group-hover:scale-150"></div>
+										<div className="w-2 h-2 bg-primary rounded-full transition-transform duration-300 group-hover:scale-150"></div>
 										<span className="text-main dark:text-main font-medium">{skill.name}</span>
 										<span className="text-light dark:text-light text-sm">({skill.category})</span>
 									</div>
@@ -176,7 +176,7 @@ const SimpleSkillsPage = () => {
 									className="rounded-lg p-5 bg-surface-elevated dark:bg-surface-elevated shadow-sm border border-main dark:border-main transition-all duration-300 custom-hover"
 								>
 									<div className="flex justify-center mb-3">
-										<div className="p-3 bg-primary-light dark:bg-primary-light text-primary-bright rounded-full">
+										<div className="p-3 bg-primary-light dark:bg-primary-light text-primary rounded-full">
 											{skill.icon}
 										</div>
 									</div>
