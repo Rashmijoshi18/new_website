@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import typing from "../assets/type.jpeg";
 import weather_check from "../assets/weather.jpeg";
 import fit from "../assets/fitlife.jpeg";
 import { ExternalLink, Github, ArrowUpRight, Code2 } from "lucide-react";
 
-// images add
+// Projects data
 const projects = [
 	{
 		title: "TypeMaster",
@@ -32,43 +32,44 @@ const projects = [
 	},
 ];
 
-export default function Projects() {
+function Projects() {
 	return (
-		<section className=" px-4 sm:px-6 md:pl-2 md:pr-6 lg:pr-10 pt-16 lg:pt-4">
-			<div className="max-w-7xl mx-auto pt-12 pb-20 px-4">
+		// ⬇️ FIX: Enough top padding for mobile so content doesn't hide behind navbar
+		<section className="px-4 sm:px-6 md:px-8 lg:px-12 pt-24 sm:pt-20 lg:pt-12">
+			<div className="max-w-7xl mx-auto pb-20">
 				{/* Section Header */}
 				<div className="text-center mb-16">
-					<div className="inline-flex items-center gap-2 bg-surface-elevated dark:bg-surface-elevated px-4 py-2 rounded-full mb-6 border border-main dark:border-main">
+					<div className="inline-flex items-center gap-2 bg-surface-elevated px-4 py-2 rounded-full mb-6 border border-main">
 						<Code2 className="w-5 h-5 text-primary-bright" />
 						<span className="text-primary font-semibold text-sm uppercase tracking-wider">Portfolio</span>
 					</div>
 
 					<h2 className="text-4xl font-bold text-primary mb-4">
-						Featured
-						<span className="text-4xl font-bold text-primary mb-4"> Projects</span>
+						Featured <span className="text-4xl font-bold text-primary">Projects</span>
 					</h2>
 
-					<p className="text-light dark:text-light max-w-2xl mx-auto text-lg">
+					<p className="text-light max-w-2xl mx-auto text-lg">
 						Exploring the intersection of design and development through innovative web applications
 					</p>
 				</div>
 
 				{/* Projects Grid */}
-				<div className="grid gap-8 lg:gap-12">
+				<div className="grid gap-8 lg:gap-16">
 					{projects.map((project, index) => (
 						<div
 							key={index}
-							className={`relative ${
+							className={`flex flex-col lg:flex ${
 								index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-							} flex flex-col lg:flex gap-8 lg:gap-12 items-center mb-15`}
+							} gap-8 lg:gap-12 items-center`}
 						>
 							{/* Project Image */}
-							<div className="lg:w-2/5 w-full relative">
-								<div className="relative overflow-hidden rounded-2xl shadow-lg group">
+							<div className="lg:w-2/5 w-full">
+								<div className="overflow-hidden rounded-2xl shadow-lg group">
 									<img
 										src={project.image}
 										alt={project.title}
-										className="w-full h-48 lg:h-56 object-cover transform transition-transform duration-500 group-hover:scale-105 group-hover:brightness-90"
+										loading="lazy"
+										className="w-full h-48 lg:h-56 object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-90 will-change-transform"
 									/>
 								</div>
 							</div>
@@ -76,11 +77,8 @@ export default function Projects() {
 							{/* Project Info */}
 							<div className="lg:w-3/5 w-full space-y-6">
 								<div className="space-y-4">
-									{/* Updated heading to match About page style */}
-									<h3 className="text-2xl font-bold text-main dark:text-main">{project.title}</h3>
-
-									{/* Updated description to match About page text style */}
-									<p className="text-light dark:text-light leading-relaxed">{project.description}</p>
+									<h3 className="text-2xl font-bold text-main">{project.title}</h3>
+									<p className="text-light leading-relaxed">{project.description}</p>
 								</div>
 
 								{/* Tech Stack */}
@@ -88,30 +86,31 @@ export default function Projects() {
 									{project.tech.map((tech, i) => (
 										<span
 											key={i}
-											className="bg-surface-elevated dark:bg-surface-elevated text-primary px-4 py-2 rounded-lg text-sm font-medium border border-main dark:border-main hover:border-primary transition-colors"
+											className="bg-surface-elevated text-primary px-4 py-2 rounded-lg text-sm font-medium border border-main hover:border-primary transition-colors"
 										>
 											{tech}
 										</span>
 									))}
 								</div>
+
 								{/* Action Links */}
 								<div className="flex gap-4 flex-wrap">
 									<a
 										href={project.demo}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="bg-primary dark:bg-primary text-white dark:text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base hover:bg-primary dark:hover:bg-primary transition-colors"
+										className="bg-primary text-white px-5 py-3 rounded-xl font-semibold flex items-center gap-2 hover:bg-primary-hover transition-colors"
 									>
-										<ExternalLink size={16} className="sm:w-5 sm:h-5" />
+										<ExternalLink size={18} />
 										Live Demo
 									</a>
 									<a
 										href={project.code}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="border-2 border-primary text-primary px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold flex items-center gap-2 text-sm sm:text-base hover:border-main shadow-xl hover:text-white transition-colors"
+										className="border-2 border-primary text-primary px-5 py-3 rounded-xl font-semibold flex items-center gap-2 hover:border-main hover:bg-primary hover:text-white transition-colors"
 									>
-										<Github size={16} className="sm:w-5 sm:h-5" />
+										<Github size={18} />
 										View Code
 									</a>
 								</div>
@@ -120,24 +119,22 @@ export default function Projects() {
 					))}
 				</div>
 
-				{/* Enhanced Call to Action */}
-				<div className="text-center mt-20">
-					<div className="relative inline-block w-full">
-						<div className="absolute inset-0 bg-primary-hover dark:bg-primary rounded-2xl blur opacity-75"></div>
-						<div className="relative bg-surface dark:bg-surface backdrop-blur-sm px-12 py-8 rounded-2xl border border-main dark:border-main shadow-xl">
-							<h3 className="text-2xl font-bold text-main dark:text-main mb-2">
-								Interested in more work?
-							</h3>
-							<p className="text-light dark:text-light mb-6">Check out my complete projects on GitHub</p>
+				{/* Call to Action */}
+				<div className="text-center mt-24">
+					<div className="relative inline-block w-full lg:max-w-2xl">
+						<div className="absolute inset-0 bg-primary rounded-2xl blur opacity-70"></div>
+						<div className="relative bg-surface backdrop-blur-sm px-8 sm:px-12 py-8 rounded-2xl border border-main shadow-xl">
+							<h3 className="text-2xl font-bold text-main mb-2">Interested in more work?</h3>
+							<p className="text-light mb-6">Check out my complete projects on GitHub</p>
 							<a
 								href="https://github.com/Rashmijoshi18"
 								target="_blank"
 								rel="noopener noreferrer"
-								className="inline-flex items-center gap-2 bg-primary text-white px-5 py-3 sm:px-8 sm:py-4 rounded-xl font-semibold hover:shadow-xl hover:bg-primary-hover transition-all duration-300 transform hover:-translate-y-1 text-sm sm:text-base"
+								className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:shadow-xl hover:bg-primary-hover transition-all duration-300 transform hover:-translate-y-1"
 							>
-								<Github size={16} className="sm:w-5 sm:h-5" />
+								<Github size={18} />
 								Explore All Projects
-								<ArrowUpRight size={16} className="sm:w-5 sm:h-5" />
+								<ArrowUpRight size={18} />
 							</a>
 						</div>
 					</div>
@@ -146,3 +143,5 @@ export default function Projects() {
 		</section>
 	);
 }
+
+export default memo(Projects);

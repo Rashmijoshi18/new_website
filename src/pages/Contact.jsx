@@ -4,57 +4,34 @@ import { Mail, MapPin, Send, Check, Clock, User, MessageCircle, Linkedin } from 
 const ContactPage = () => {
 	const [success, setSuccess] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+	const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 	const [errors, setErrors] = useState({});
 
-	// Handle input
 	const handleInputChange = (e) => {
-		setFormData({
-			...formData,
-			[e.target.name]: e.target.value,
-		});
-		// Clear error when user starts typing
-		if (errors[e.target.name]) {
-			setErrors({
-				...errors,
-				[e.target.name]: "",
-			});
-		}
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+		if (errors[e.target.name]) setErrors({ ...errors, [e.target.name]: "" });
 	};
 
-	// Simple form validation
 	const validateForm = () => {
 		let newErrors = {};
 		if (!formData.name.trim()) newErrors.name = "Name is required";
-		if (!formData.email.trim()) {
-			newErrors.email = "Email is required";
-		} else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-			newErrors.email = "Enter a valid email";
-		}
+		if (!formData.email.trim()) newErrors.email = "Email is required";
+		else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Enter a valid email";
 		if (!formData.message.trim()) newErrors.message = "Message is required";
 		setErrors(newErrors);
 		return Object.keys(newErrors).length === 0;
 	};
 
-	// Handle submit
 	const handleSubmit = async (e) => {
 		e?.preventDefault?.();
 		if (!validateForm() || isSubmitting) return;
 
 		setIsSubmitting(true);
-
-		// Simulate API call
-		await new Promise((resolve) => setTimeout(resolve, 1500));
-
+		await new Promise((resolve) => setTimeout(resolve, 1200));
 		setSuccess(true);
 		setFormData({ name: "", email: "", message: "" });
 		setIsSubmitting(false);
-
-		setTimeout(() => setSuccess(false), 4000);
+		setTimeout(() => setSuccess(false), 3000);
 	};
 
 	return (
@@ -85,42 +62,39 @@ const ContactPage = () => {
 								icon: <Mail size={24} className="text-primary" />,
 								title: "Email",
 								desc: "rashmijoshi3699@gmail.com",
-								subtitle: "Send me a message anytime",
-								link: "https://mail.google.com/mail/?view=cm&fs=1&to=rashmijoshi3699@gmail.com&su=Hello%20Rashmi&body=I%20would%20like%20to%20connect%20with%20you.",
-								target: "_blank",
+								link: "mailto:rashmijoshi3699@gmail.com",
 							},
 							{
 								icon: <Linkedin size={24} className="text-primary" />,
 								title: "LinkedIn",
 								desc: "linkedin.com/in/rashmi3699",
-								subtitle: "Connect with me on LinkedIn",
 								link: "https://www.linkedin.com/in/rashmi3699/",
-								target: "_blank",
 							},
 							{
 								icon: <MapPin size={24} className="text-primary" />,
 								title: "Location",
 								desc: "India",
-								subtitle: "Available remotely worldwide",
 								link: "https://www.google.com/maps/place/India",
-								target: "_blank",
 							},
 						].map((contact, idx) => (
 							<a
 								key={idx}
 								href={contact.link}
-								target={contact.target}
-								rel={contact.target === "_blank" ? "noopener noreferrer" : ""}
+								target="_blank"
+								rel="noopener noreferrer"
 								className="bg-surface dark:bg-surface rounded-lg p-4 sm:p-6 text-center border border-main dark:border-main
-                hover:shadow-lg focus:shadow-lg active:shadow-lg hover:border-primary- dark:hover:border-primary-
-                transition-all duration-300 block cursor-pointer hover:scale-105"
+                  transition-all duration-300 block cursor-pointer
+                  hover:shadow-lg focus:shadow-lg active:shadow-lg
+                  sm:hover:scale-105 sm:hover:border-primary"
 							>
 								<div className="mb-4 flex justify-center">{contact.icon}</div>
 								<h3 className="font-semibold text-main dark:text-main mb-2">{contact.title}</h3>
 								<p className="text-primary font-medium mb-2 text-sm sm:text-base break-all sm:break-normal">
 									{contact.desc}
 								</p>
-								<p className="text-light dark:text-light text-sm">{contact.subtitle}</p>
+								<p className="text-light dark:text-light text-sm">
+									{contact.title === "Location" ? "Available remotely worldwide" : ""}
+								</p>
 							</a>
 						))}
 					</div>
@@ -233,21 +207,13 @@ const ContactPage = () => {
 						</h3>
 						<div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-sm">
 							{[
-								{
-									step: "1",
-									title: "I'll respond within 24 hours",
-									icon: <Clock size={16} />,
-								},
+								{ step: "1", title: "I'll respond within 24 hours", icon: <Clock size={16} /> },
 								{
 									step: "2",
 									title: "We'll discuss your project needs",
 									icon: <MessageCircle size={16} />,
 								},
-								{
-									step: "3",
-									title: "I'll provide a custom proposal",
-									icon: <Send size={16} />,
-								},
+								{ step: "3", title: "I'll provide a custom proposal", icon: <Send size={16} /> },
 							].map((item, i) => (
 								<div key={i} className="flex flex-col items-center">
 									<div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold mb-3 text-sm sm:text-base">
