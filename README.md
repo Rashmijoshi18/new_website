@@ -4,7 +4,7 @@ A modern, responsive portfolio website built with React and Vite, showcasing per
 
 ## 🚀 Features
 
--   **React 18+** - Latest React features with hooks and functional components
+-   **React ** - Latest React features with hooks and functional components
 -   **Vite** - Lightning-fast build tool and development server
 -   **Multi-page Navigation** - Home, About, Projects, Skills, and Contact pages
 -   **Component-based Architecture** - Modular, reusable UI components
